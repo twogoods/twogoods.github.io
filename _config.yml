@@ -17,10 +17,6 @@ url: http://yoursite.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
 
 # Directory
 source_dir: source

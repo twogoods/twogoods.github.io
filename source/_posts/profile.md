@@ -1,6 +1,6 @@
 title: profile及配置服务
 date: 2016-04-05 21:11:32
-tags: java
+categories: java
 tags: config-server
 ---
 一套完整的代码肯定有不同的profile，开发环境，测试环境，线上环境；程序需要读取不同的配置文件来完成不同环境的部署。传统的spring项目需要使用`PropertyPlaceholderConfigurer`来完成不同环境下的读取；springboot则特别方便，对于application.yml,application-test.yml,application-dev.yml,在启动参数里加`-Dspring.profiles.active=test`就可以按需读取，这也还是从本地的不同文件中读取，spring-cloud也提供了一个cloud-config服务，可以非常简单的实现从云端读取不同的配置文件。
