@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>springboot | Twogoods</title>
+  <title>关于动态代理 | Twogoods</title>
   <meta name="author" content="twogoods">
   
   <meta name="description" content="twogoods&#39; blog">
@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="springboot"/>
+  <meta property="og:title" content="关于动态代理"/>
   <meta property="og:site_name" content="Twogoods"/>
 
   
@@ -219,24 +219,26 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-11-04T14:54:14.000Z"><a href="/2015/11/04/springboot/">2015-11-04</a></time>
+        <time datetime="2016-11-02T07:34:34.000Z"><a href="/2016/11/02/proxy/">2016-11-02</a></time>
       
       
   
-    <h1 class="title">springboot</h1>
+    <h1 class="title">关于动态代理</h1>
   
 
     </header>
     <div class="entry">
       
-        <p><a href="http://www.searchsoa.com.cn/2015soamicroservice/index.html" target="_blank" rel="external">关于微服务</a>及<a href="https://www.gitbook.com/book/qbgbook/spring-boot-reference-guide-zh/details" target="_blank" rel="external">中文文档</a>。这里也有一个关于微服务的<a href="http://dockone.io/article/1066" target="_blank" rel="external">系列文章</a>，写的很不错，值得一读。  </p>
-<p>跟着文档可以快速的上手。springboot确实可以快速的构建一个工程，过程中遇到的一个问题就是配置文件，springboot推荐使用<code>.properities</code>或<code>yml</code>两种方式。配置文件中会分别配置测试与生产环境，如下是一个完整的配置：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment">#mvn spring-boot:run 时会使用此配置</span></span><br><span class="line"><span class="attr">datasource:</span></span><br><span class="line">  <span class="number">51</span>banka:</span><br><span class="line"><span class="attr">    driverClassName:</span> com.mysql.jdbc.Driver</span><br><span class="line"><span class="attr">    url:</span> jdbc:mysql://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">3310</span>/test</span><br><span class="line">    username : root</span><br><span class="line">    password :</span><br><span class="line">    initialSize : <span class="number">10</span></span><br><span class="line">    maxActive : <span class="number">10</span></span><br><span class="line">    maxIdle : <span class="number">10</span></span><br><span class="line">    minIdle : <span class="number">10</span></span><br><span class="line"></span><br><span class="line">spring.view.prefix: /WEB-INF/jsp/</span><br><span class="line">spring.view.suffix: .jsp</span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">10000</span></span><br><span class="line"><span class="attr">  contextPath:</span> /bankaservice</span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment">#测试环境的配置，打包成jar 使用 java -jar -Dspring.profiles.active=development target/test.jar 启动</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">    profiles:</span> development</span><br><span class="line"><span class="attr">datasource:</span></span><br><span class="line">  <span class="number">51</span>banka:</span><br><span class="line"><span class="attr">    driverClassName:</span> com.mysql.jdbc.Driver</span><br><span class="line"><span class="attr">    url:</span> jdbc:mysql://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">3310</span>/test</span><br><span class="line">    username : root</span><br><span class="line">    password :</span><br><span class="line">    initialSize : <span class="number">10</span></span><br><span class="line">    maxActive : <span class="number">10</span></span><br><span class="line">    maxIdle : <span class="number">10</span></span><br><span class="line">    minIdle : <span class="number">10</span></span><br><span class="line"></span><br><span class="line">spring.view.prefix: /WEB-INF/jsp/</span><br><span class="line">spring.view.suffix: .jsp</span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">10000</span></span><br><span class="line"><span class="attr">  contextPath:</span> /test</span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># 生产环境</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">    profiles:</span> production</span><br><span class="line"><span class="attr">datasource:</span></span><br><span class="line">  <span class="number">51</span>banka:</span><br><span class="line"><span class="attr">    driverClassName:</span> com.mysql.jdbc.Driver</span><br><span class="line"><span class="attr">    url:</span> jdbc:mysql://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">3310</span>/test</span><br><span class="line">    username : root</span><br><span class="line">    password : </span><br><span class="line">    initialSize : <span class="number">30</span></span><br><span class="line">    maxActive : <span class="number">40</span></span><br><span class="line">    maxIdle : <span class="number">40</span></span><br><span class="line">    minIdle : <span class="number">30</span></span><br><span class="line"></span><br><span class="line">spring.view.prefix: /WEB-INF/jsp/</span><br><span class="line">spring.view.suffix: .jsp</span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8080</span></span><br><span class="line"><span class="attr">  contextPath:</span> /test</span><br></pre></td></tr></table></figure></p>
-<p>另文档的这一处:<br> JSP的限制<br>在内嵌的servlet容器中运行一个Spring Boot应用时（并打包成一个可执行的存档archive），容器对JSP的支持有一些限制。</p>
+        <p>一般的程序不太会用到动态代理，在写库或者框架的时候用的多一些，我呢硬着头皮在试着完成一个类似spring的框架，过程中自然碰到了动态代理的一些小问题。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Configuration</span></span><br><span class="line">public class WebAppConfig extends WebMvcConfigurerAdapter &#123;</span><br><span class="line">    <span class="variable">@Value</span>(<span class="string">"$&#123;name&#125;"</span>)</span><br><span class="line">    private String name;</span><br><span class="line">    </span><br><span class="line">    <span class="variable">@Bean</span></span><br><span class="line">    AuthorizeInterceptor authorizelInterceptor() &#123;</span><br><span class="line">        return new AuthorizeInterceptor(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">@Override</span></span><br><span class="line">    public void addInterceptors(InterceptorRegistry registry) &#123;</span><br><span class="line">        registry<span class="selector-class">.addInterceptor</span>(authorizelInterceptor())</span><br><span class="line">                <span class="selector-class">.addPathPatterns</span>(<span class="string">"/user/**"</span>);</span><br><span class="line">        super<span class="selector-class">.addInterceptors</span>(registry);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我是这么理解这段代码的：@Bean注解的方法里new出来的对象会仍到IOC里，下面调用了上面注解的方法会在IOC里拿出这个Bean。想改变方法的执行，首先想到的是动态代理。  </p>
 <ul>
-<li>tomcat只支持war的打包方式，不支持可执行的jar</li>
-<li>内嵌的Jetty目前不支持JSP</li>
-<li>Undertow不支持JSP<br>所以为了防坑还是跳过jsp用别的模板吧</li>
+<li>JDK的动态代理，文中例子里下面这个方法addInterceptors()调用authorizelInterceptor()方法，在执行authorizelInterceptor()这个方法的时候是原模原样执行的不会再走一次代理。</li>
+<li>Cglib，方法之间调用都会走代理，适合这个例子。</li>
 </ul>
+<p>解析<code>@Bean</code>最先想到的方法是这样：创建普通Bean一样创建实例，然后调用所有的<code>@Bean</code>注解的方法，方法得到的Bean放入IOC，最后创建一个这个类的代理对象放入IOC，也就是定义的这个Bean的实例在IOC里实际是一个代理对象。(这个方法有问题，像上面这个例子，<code>addInterceptors()</code>会调用<code>authorizelInterceptor()</code>普通对象调用的时候会创建一个<code>AuthorizeInterceptor</code>,<code>authorizelInterceptor()</code>调用的时候又会创建一个)。为解决这个问题，我们可以一开始就创建代理对象，代理对象调用方法的时候，先查看IOC里有没有这个Bean，没有就创建，有就直接返回IOC里的实例，这样就确保一个Bean只产生了一个实例。<br>我们一开始就创建一个这个类的代理对象，又发现这个类注入了一个属性值，方法里也会使用这个属性，而我在查看创建的代理对象的field时发现并没有<code>name</code>这个field，所以没办法直接设置这个值，这时只能调用<code>setter</code>即<code>setName()</code>来赋上值。然而如果我类里没有创建<code>setter</code>那就无法赋值，好在Cglib可以动态的为属性加上<code>setter</code>方法来解决这个问题。<br>最后，以上是我拿到这个问题自己的一些思考，还并没有看过Spring的实现，有时间去了解一下补上spring的实现。</p>
+<hr>
+<p><a href="https://github.com/twogoods/tiny4j/blob/master/core/src/test/java/com/tg/tiny4j/core/aop/CglibDynamicAopProxyTest.java" target="_blank" rel="external">代码参考</a></p>
 
       
     </div>
@@ -251,7 +253,7 @@
         
   
   <div class="tags">
-    <a href="/tags/springboot/">springboot</a>
+    <a href="/tags/动态代理/">动态代理</a>
   </div>
 
 
@@ -277,10 +279,8 @@
 
  <nav id="pagination" >
     
-    <a href="/2015/12/07/mybatis/" class="alignleft prev" >上一页</a>
     
-    
-    <a href="/2015/10/17/小整理/" class="alignright next" >下一页</a>
+    <a href="/2016/10/09/gotoys/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>
@@ -290,7 +290,7 @@
 <section id="comment">
 
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="2015/11/04/springboot/" data-title="springboot" data-url="http://yoursite.com/2015/11/04/springboot/"></div>
+  <div class="ds-thread" data-thread-key="2016/11/02/proxy/" data-title="关于动态代理" data-url="http://yoursite.com/2016/11/02/proxy/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
