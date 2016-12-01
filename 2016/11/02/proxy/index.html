@@ -43,8 +43,6 @@
     
       <li><a href="/about">关于</a></li>
     
-      <li><a href="http://twogoods.cc/privateblog">私密空间</a></li>
-    
 <li> <a title="累了？请猛戳" href='javascript:(function() {
 	function c() {
 		var e = document.createElement("link");
@@ -229,7 +227,7 @@
     </header>
     <div class="entry">
       
-        <p>一般的程序不太会用到动态代理，在写库或者框架的时候用的多一些，我呢硬着头皮在试着完成一个类似spring的框架，过程中自然碰到了动态代理的一些小问题。</p>
+        <p>一般的程序不太会用到动态代理，在写库或者框架的时候用的多一些，我呢硬着头皮在试着完成一个类似spring的框架，过程中自然碰到了动态代理的一些小问题。  <a id="more"></a></p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Configuration</span></span><br><span class="line">public class WebAppConfig extends WebMvcConfigurerAdapter &#123;</span><br><span class="line">    <span class="variable">@Value</span>(<span class="string">"$&#123;name&#125;"</span>)</span><br><span class="line">    private String name;</span><br><span class="line">    </span><br><span class="line">    <span class="variable">@Bean</span></span><br><span class="line">    AuthorizeInterceptor authorizelInterceptor() &#123;</span><br><span class="line">        return new AuthorizeInterceptor(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">@Override</span></span><br><span class="line">    public void addInterceptors(InterceptorRegistry registry) &#123;</span><br><span class="line">        registry<span class="selector-class">.addInterceptor</span>(authorizelInterceptor())</span><br><span class="line">                <span class="selector-class">.addPathPatterns</span>(<span class="string">"/user/**"</span>);</span><br><span class="line">        super<span class="selector-class">.addInterceptors</span>(registry);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我是这么理解这段代码的：@Bean注解的方法里new出来的对象会仍到IOC里，下面调用了上面注解的方法会在IOC里拿出这个Bean。想改变方法的执行，首先想到的是动态代理。  </p>
 <ul>
