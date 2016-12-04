@@ -1,7 +1,7 @@
 title: mybatis中的几个问题
 date: 2015-12-07 22:25:01
-categories: mybatis
-tags: 问题小计
+categories: java
+tags: mybatis
 ---
 公司里用mybatis，写着写着会有几个问题冒出来，终于有空去看了一下源代码。
 - mybatis 方法签名返回list，LinkedList，如何实现不同的list?

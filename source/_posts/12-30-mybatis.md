@@ -1,7 +1,7 @@
 title: 使用mybatis的注意点
 date: 2014-12-30 20:42:49
-categories: mybatis
-tags: 问题小计
+categories: java
+tags: mybatis
 ---
  1. 像mybatis,hibernate等等框架大量用到Java的反射，千万要在你的类中定义默认的构造方法
  2. 想这样含多个参数的方法 `public String[] getUserbh(String deptbh,String banzubh);
