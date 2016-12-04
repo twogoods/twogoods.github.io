@@ -218,6 +218,58 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-04-05T13:11:32.000Z"><a href="/2016/04/05/profile/">2016-04-05</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/04/05/profile/">profile及配置服务</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>一套完整的代码肯定有不同的profile，开发环境，测试环境，线上环境；程序需要读取不同的配置文件来完成不同环境的部署。传统的spring项目需要使用<code>PropertyPlaceholderConfigurer</code>来完成不同环境下的读取；springboot则特别方便，对于application.yml,application-test.yml,application-dev.yml,在启动参数里加<code>-Dspring.profiles.active=test</code>就可以按需读取，这也还是从本地的不同文件中读取，spring-cloud也提供了一个cloud-config服务，可以非常简单的实现从云端读取不同的配置文件。</p>
+<h3 id="基于XML配置的spring项目"><a href="#基于XML配置的spring项目" class="headerlink" title="基于XML配置的spring项目"></a>基于XML配置的spring项目</h3><p>传统的spring项目application.xml里关于配置文件的配置，这个<code>CloudConfigLoader</code>继承<code>PropertyPlaceholderConfigurer</code>来实现按需读取
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2016/04/05/profile/#more" class="more-link">阅读全文</a>
+          </div>
+        
+        
+      
+
+
+
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-03-02T05:59:19.000Z"><a href="/2016/03/02/nginx/">2016-03-02</a></time>
       
       
@@ -412,61 +464,6 @@
 
 
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-04T14:54:14.000Z"><a href="/2015/11/04/springboot/">2015-11-04</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/04/springboot/">springboot</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="http://www.searchsoa.com.cn/2015soamicroservice/index.html" target="_blank" rel="external">关于微服务</a>及<a href="https://www.gitbook.com/book/qbgbook/spring-boot-reference-guide-zh/details" target="_blank" rel="external">中文文档</a>。这里也有一个关于微服务的<a href="http://dockone.io/article/1066" target="_blank" rel="external">系列文章</a>，写的很不错，值得一读。  </p>
-<p>跟着文档可以快速的上手。springboot确实可以快速的构建一个工程，过程中遇到的一个问题就是配置文件，springboot推荐使用<code>.properities</code>或<code>yml</code>两种方式。配置文件中会分别配置测试与生产环境，如下是一个完整的配置：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment">#mvn spring-boot:run 时会使用此配置</span></span><br><span class="line"><span class="attr">datasource:</span></span><br><span class="line">  <span class="number">51</span>banka:</span><br><span class="line"><span class="attr">    driverClassName:</span> com.mysql.jdbc.Driver</span><br><span class="line"><span class="attr">    url:</span> jdbc:mysql://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">3310</span>/test</span><br><span class="line">    username : root</span><br><span class="line">    password :</span><br><span class="line">    initialSize : <span class="number">10</span></span><br><span class="line">    maxActive : <span class="number">10</span></span><br><span class="line">    maxIdle : <span class="number">10</span></span><br><span class="line">    minIdle : <span class="number">10</span></span><br><span class="line"></span><br><span class="line">spring.view.prefix: /WEB-INF/jsp/</span><br><span class="line">spring.view.suffix: .jsp</span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">10000</span></span><br><span class="line"><span class="attr">  contextPath:</span> /bankaservice</span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment">#测试环境的配置，打包成jar 使用 java -jar -Dspring.profiles.active=development target/test.jar 启动</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">    profiles:</span> development</span><br><span class="line"><span class="attr">datasource:</span></span><br><span class="line">  <span class="number">51</span>banka:</span><br><span class="line"><span class="attr">    driverClassName:</span> com.mysql.jdbc.Driver</span><br><span class="line"><span class="attr">    url:</span> jdbc:mysql://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">3310</span>/test</span><br><span class="line">    username : root</span><br><span class="line">    password :</span><br><span class="line">    initialSize : <span class="number">10</span></span><br><span class="line">    maxActive : <span class="number">10</span></span><br><span class="line">    maxIdle : <span class="number">10</span></span><br><span class="line">    minIdle : <span class="number">10</span></span><br><span class="line"></span><br><span class="line">spring.view.prefix: /WEB-INF/jsp/</span><br><span class="line">spring.view.suffix: .jsp</span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">10000</span></span><br><span class="line"><span class="attr">  contextPath:</span> /test</span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># 生产环境</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">    profiles:</span> production</span><br><span class="line"><span class="attr">datasource:</span></span><br><span class="line">  <span class="number">51</span>banka:</span><br><span class="line"><span class="attr">    driverClassName:</span> com.mysql.jdbc.Driver</span><br><span class="line"><span class="attr">    url:</span> jdbc:mysql://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">3310</span>/test</span><br><span class="line">    username : root</span><br><span class="line">    password : </span><br><span class="line">    initialSize : <span class="number">30</span></span><br><span class="line">    maxActive : <span class="number">40</span></span><br><span class="line">    maxIdle : <span class="number">40</span></span><br><span class="line">    minIdle : <span class="number">30</span></span><br><span class="line"></span><br><span class="line">spring.view.prefix: /WEB-INF/jsp/</span><br><span class="line">spring.view.suffix: .jsp</span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8080</span></span><br><span class="line"><span class="attr">  contextPath:</span> /test</span><br></pre></td></tr></table></figure></p>
-<p>另文档的这一处:<br> JSP的限制<br>在内嵌的servlet容器中运行一个Spring Boot应用时（并打包成一个可执行的存档archive），容器对JSP的支持有一些限制。</p>
-<ul>
-<li>tomcat只支持war的打包方式，不支持可执行的jar</li>
-<li>内嵌的Jetty目前不支持JSP</li>
-<li>Undertow不支持JSP<br>所以为了防坑还是跳过jsp用别的模板吧</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-
-
-
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -489,11 +486,9 @@
   
     <li><a href="/categories/go/">go</a><small>1</small></li>
   
-    <li><a href="/categories/java/">java</a><small>5</small></li>
+    <li><a href="/categories/java/">java</a><small>8</small></li>
   
     <li><a href="/categories/javascript/">javascript</a><small>2</small></li>
-  
-    <li><a href="/categories/mybatis/">mybatis</a><small>2</small></li>
   
     <li><a href="/categories/nginx/">nginx</a><small>1</small></li>
   
@@ -515,7 +510,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 20px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 10px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
   </div>
 </div>
 
@@ -524,6 +519,10 @@
 <div class="widget tag">
   <h3 class="title">最新文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2016/12/04/tiny4j/">tiny4j:一个轻量级的类似Spring的实现</a>
+      </li>
     
       <li>
         <a href="/2016/11/02/proxy/">关于动态代理</a>
@@ -539,10 +538,6 @@
     
       <li>
         <a href="/2016/06/15/privateblog/">博客的私密空间</a>
-      </li>
-    
-      <li>
-        <a href="/2016/04/05/profile/">profile及配置服务</a>
       </li>
     
   </ul>
