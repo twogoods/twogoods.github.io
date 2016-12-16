@@ -1,0 +1,14 @@
+<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	<% if(theme.scheme == "Paradox"){ %>
+		<!-- Paradox Footer Left Section -->
+		<%- partial("_partial/footer-left") %>
+
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;<%- config.title %></div>
+
+		<!-- Paradox Footer Right Section -->
+	<% } %>
+    
+</footer>
