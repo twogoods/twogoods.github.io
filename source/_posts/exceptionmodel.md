@@ -52,7 +52,7 @@ tags: 异常处理
 			}
 		}
 ```
-由于要处理各种异常，代码变的特别丑陋，这里异常处理模板就派上用场了
+由于要处理各种异常，代码变的特别丑陋，这里异常处理模板也就是**模板方法**的设计模式就派上用场了
 模板1：抽象类
 ```
 public abstract class InputStreamProcessingTemplate {
