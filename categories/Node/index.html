@@ -1,374 +1,723 @@
-
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Node | Twogoods</title>
-  <meta name="author" content="twogoods">
-  
-  <meta name="description" content="twogoods&#39; blog">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  
-  <meta property="og:site_name" content="Twogoods"/>
-
-  
-    <meta property="og:image" content="undefined"/>
-  
-
-  <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="/atom.xml" title="Twogoods" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="http://apps.bdimg.com/libs/jquery/1.8.0/jquery.min.js"></script>
-</head>
-
-
-<body>
-  <header id="header" class="inner">
-<div class="alignleft">
-  <h1><a href="/">Twogoods</a></h1>
-  <h2><a href="/">每一步都是一个脚印</a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
+    <head>
+    <!-- Title -->
     
-      <li><a href="/">首页</a></li>
+    <title>
+        分类: Node | Twogoods
+    </title>
     
-      <li><a href="/archives">归档</a></li>
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
     
-      <li><a href="/about">关于</a></li>
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="twogoods">
+    <meta name="description" content="twogoods&#39; blog">
+    <meta name="keywords" content="twogoods">
     
-<li> <a title="累了？请猛戳" href='javascript:(function() {
-	function c() {
-		var e = document.createElement("link");
-		e.setAttribute("type", "text/css");
-		e.setAttribute("rel", "stylesheet");
-		e.setAttribute("href", f);
-		e.setAttribute("class", l);
-		document.body.appendChild(e)
-	}
- 
-	function h() {
-		var e = document.getElementsByClassName(l);
-		for (var t = 0; t < e.length; t++) {
-			document.body.removeChild(e[t])
-		}
-	}
- 
-	function p() {
-		var e = document.createElement("div");
-		e.setAttribute("class", a);
-		document.body.appendChild(e);
-		setTimeout(function() {
-			document.body.removeChild(e)
-		}, 100)
-	}
- 
-	function d(e) {
-		return {
-			height : e.offsetHeight,
-			width : e.offsetWidth
-		}
-	}
- 
-	function v(i) {
-		var s = d(i);
-		return s.height > e && s.height < n && s.width > t && s.width < r
-	}
- 
-	function m(e) {
-		var t = e;
-		var n = 0;
-		while (!!t) {
-			n += t.offsetTop;
-			t = t.offsetParent
-		}
-		return n
-	}
- 
-	function g() {
-		var e = document.documentElement;
-		if (!!window.innerWidth) {
-			return window.innerHeight
-		} else if (e && !isNaN(e.clientHeight)) {
-			return e.clientHeight
-		}
-		return 0
-	}
- 
-	function y() {
-		if (window.pageYOffset) {
-			return window.pageYOffset
-		}
-		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-	}
- 
-	function E(e) {
-		var t = m(e);
-		return t >= w && t <= b + w
-	}
- 
-	function S() {
-		var e = document.createElement("audio");
-		e.setAttribute("class", l);
-		e.src = i;
-		e.loop = false;
-		e.addEventListener("canplay", function() {
-			setTimeout(function() {
-				x(k)
-			}, 500);
-			setTimeout(function() {
-				N();
-				p();
-				for (var e = 0; e < O.length; e++) {
-					T(O[e])
-				}
-			}, 15500)
-		}, true);
-		e.addEventListener("ended", function() {
-			N();
-			h()
-		}, true);
-		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-		document.body.appendChild(e);
-		e.play()
-	}
- 
-	function x(e) {
-		e.className += " " + s + " " + o
-	}
- 
-	function T(e) {
-		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-	}
- 
-	function N() {
-		var e = document.getElementsByClassName(s);
-		var t = new RegExp("\\b" + s + "\\b");
-		for (var n = 0; n < e.length; ) {
-			e[n].className = e[n].className.replace(t, "")
-		}
-	}
- 
-	var e = 30;
-	var t = 30;
-	var n = 350;
-	var r = 350;
-	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
-	var s = "mw-harlem_shake_me";
-	var o = "im_first";
-	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-	var a = "mw-strobe_light";
-	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-	var l = "mw_added_css";
-	var b = g();
-	var w = y();
-	var C = document.getElementsByTagName("*");
-	var k = null;
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			if (E(A)) {
-				k = A;
-				break
-			}
-		}
-	}
-	if (A === null) {
-		console.warn("Could not find a node of the right size. Please try a different page.");
-		return
-	}
-	c();
-	S();
-	var O = [];
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			O.push(A)
-		}
-	}
-})()    '>High一下</a> </li>
-
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title category">Node</h2>
-
-
-  <div class="archive">
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-08-04T03:41:57.000Z"><a href="/2015/08/04/bolg/">2015-08-04</a></time>
-            
-              <h1 class="title"><a href="/2015/08/04/bolg/">一个简易的博客</a></h1>
-            
-          </header>
-        </div>
-      </article>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-04-20T12:24:55.000Z"><a href="/2015/04/20/startNode/">2015-04-20</a></time>
-            
-              <h1 class="title"><a href="/2015/04/20/startNode/">Node初步</a></h1>
-            
-          </header>
-        </div>
-      </article>
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Twogoods">
     
-  </div>
-</div></div>
-    <aside id="sidebar" class="alignright">
-  
-<div class="widget tag">
-  <h3 class="title">分类</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/Node/">Node</a><small>2</small></li>
-  
-    <li><a href="/categories/git/">git</a><small>2</small></li>
-  
-    <li><a href="/categories/go/">go</a><small>1</small></li>
-  
-    <li><a href="/categories/java/">java</a><small>8</small></li>
-  
-    <li><a href="/categories/javascript/">javascript</a><small>2</small></li>
-  
-    <li><a href="/categories/nginx/">nginx</a><small>1</small></li>
-  
-    <li><a href="/categories/redis/">redis</a><small>1</small></li>
-  
-    <li><a href="/categories/产品/">产品</a><small>1</small></li>
-  
-    <li><a href="/categories/小玩意/">小玩意</a><small>1</small></li>
-  
-    <li><a href="/categories/生活/">生活</a><small>1</small></li>
-  
-    <li><a href="/categories/记录/">记录</a><small>4</small></li>
-  
-  </ul>
-</div>
-
-
-  
-<div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
-  <div class="entry">
-    <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 10px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
-  </div>
-</div>
-
-
-  
-<div class="widget tag">
-  <h3 class="title">最新文章</h3>
-  <ul class="entry">
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://twogoods.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="分类: Node | Twogoods">
+    <meta property="og:description" content="twogoods&#39; blog">
     
-      <li>
-        <a href="/2016/12/04/tiny4j/">tiny4j:一个轻量级的类似Spring的实现</a>
-      </li>
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
     
-      <li>
-        <a href="/2016/11/02/proxy/">关于动态代理</a>
-      </li>
-    
-      <li>
-        <a href="/2016/10/09/gotoys/">golang小玩具</a>
-      </li>
-    
-      <li>
-        <a href="/2016/06/26/graduate/">最好的你们</a>
-      </li>
-    
-      <li>
-        <a href="/2016/06/15/privateblog/">博客的私密空间</a>
-      </li>
-    
-  </ul>
-</div>
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
 
 
-  <iframe width="100%" height="700" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=700&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2942070602&verifier=d8b0c9a5&dpc=1"></iframe>
-</aside>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><section>
-&copy;twogoods &nbsp;
-</section>
-<div class="clearfix"></div>
-</footer>
-  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-<!-- 百度统计 -->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?7065f5fa5f89a8ce45195696b1224959";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
     }
-  });
-</script>
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-image: url(/img/light.png);
         }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    
+</head>
+	
+	
+
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Index Module -->
+<div class="material-index mdl-grid">
+	
+    <div class="locate-thumbnail-symbol"></div>
+    
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2015/08/04/bolg/">一个简易的博客</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            很不要脸的拿了一大堆轮子造了个不像博客的博客，当然不是你现在看到的这个啦，不管怎样还是花了心思的，所以简单的说一说。这东西是平常有空全凭兴趣...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2015/08/04/bolg/" target="_self">继续阅读</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="twogoods's avatar">
+            </div>
+            <div>
+                <strong>twogoods</strong>
+                <span>8月 04, 2015</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Node/">Node</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2015/08/04/bolg/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2015/04/20/startNode/">Node初步</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            其实node在去年就接触过了，最近想进一步接触了解一下，发现菜鸟时遇到的问题还是有必要记一下。
+全局安装express： 
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2015/04/20/startNode/" target="_self">继续阅读</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="twogoods's avatar">
+            </div>
+            <div>
+                <strong>twogoods</strong>
+                <span>4月 20, 2015</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Node/">Node</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2015/04/20/startNode/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+    
+	
+		<script>
+    
+    var randomNum;
+    
+    var locatePost = $(".locate-thumbnail-symbol").next();
+    for(var i=0; i < 5; i++){
+        
+        randomNum = Math.floor(Math.random() * 15 + 1);
+        
+        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
+        
+        locatePost = locatePost.next();
+    }
+    
+</script>
+
+	
+
+</div>
+
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="twogoods's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        twogoods_io@163.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
+
+	
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/08/">八月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/07/">七月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/06/">六月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/05/">五月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/04/">四月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/03/">三月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/02/">二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/01/">一月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/12/">十二月 2014<span class="sidebar_archives-count">3</span></a>
+        </ul>
+    </li>
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+		<li>
+			<a href="/about" title="me">
+				me
+			</a>
+		</li>
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             文章总数
+             <span class="sidebar-badge">26</span>
+        </a>
+    </li>
+</ul>
+
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
+    
+    <!-- Sidebar Sponsor -->
+    
+
+
+</aside>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    
+    
+    <!-- Facebook -->
+    
+    
+    
+    <!-- Google + -->
+    
+    
+    
+    <!-- Weibo -->
+    
+    <a href="http://weibo.com/u/2942070602" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+        <span class="visuallyhidden">Weibo</span>
+    </button></a>
+    
+    
+    <!-- Instagram -->
+    
+    
+    
+    <!-- Tumblr -->
+    
+    
+    
+    <!-- Github -->
+    
+    <a href="https://github.com/twogoods" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+        <span class="visuallyhidden">Github</span>
+    </button></a>
+    
+</div>
+
+
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;Twogoods</div>
+
+		<!-- Paradox Footer Right Section -->
+	
+    
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+	<script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"twogoods"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+	<script>
+	var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length <= 0) {
+                    return;
+                }
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        str += "<li><a href='"+ data_url +"' class='search-result-title' target='_blank'>"+ data_title;
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out characters
+                            var start = first_occur - 6;
+                            var end = first_occur + 6;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 10;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substr(start, end); 
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<em class=\"search-keyword\">"+keyword+"</em>");
+                            })
+                            str += "<p class=\"search-result\">" + match_content +"...</p>" +"</a>";
+                        }
+                    }
+                })
+                $resultContent.innerHTML = str;
+            })
+        }
+    })
+}
+</script>
+
+	<script>
+        var inputArea = document.querySelector("#search");
+        var getSearchFile = function(){
+            var path = "search.xml";
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        inputArea.onfocus = function(){ getSearchFile() }
+	</script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
     });
 </script>
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-</body>
+<!-- MathJax Load-->
+
+            </main>
+        </div>
+		
+    </body>
+		
+	
 </html>
-
-
