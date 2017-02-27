@@ -3,7 +3,7 @@ date: 2015-06-28 22:03:13
 categories: redis
 tags: redis安装
 ---
-一个新东西入门总不是那样简单的，从下载，安装到完成helloworld的过程总是要花些时间的，记下来供以后参考。
+一个新东西入门总不是那样简单的，从下载，安装到完成helloworld的过程总是要花些时间的，记下来供以后参考。<!--more--> 
 ### 下载
 下载肯定是去看看[redis](http://redis.io)官网啦,不过官网却并没有官方的Windows版本，提供了 Microsoft Open Tech团队的贡献的windows版本的[链接](https://github.com/MSOpenTech/redis)，可以在这里[下载](https://github.com/MSOpenTech/redis/releases)msi安装包。一些老的博客上的下载地址会指向[这个](https://github.com/dmajkic/redis)，不过已经很久没维护了，文档也说了正式的应该是上一个Open Tech团队的。
 ### 安装

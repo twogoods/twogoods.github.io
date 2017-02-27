@@ -3,7 +3,7 @@ date: 2015-11-04 22:54:14
 categories: java
 tags: springboot
 ---
-[关于微服务](http://www.searchsoa.com.cn/2015soamicroservice/index.html)及[中文文档](https://www.gitbook.com/book/qbgbook/spring-boot-reference-guide-zh/details)。这里也有一个关于微服务的[系列文章](http://dockone.io/article/1066)，写的很不错，值得一读。  
+[关于微服务](http://www.searchsoa.com.cn/2015soamicroservice/index.html)及[中文文档](https://www.gitbook.com/book/qbgbook/spring-boot-reference-guide-zh/details)。这里也有一个关于微服务的[系列文章](http://dockone.io/article/1066)，写的很不错，值得一读。<!--more-->  
 
 跟着文档可以快速的上手。springboot确实可以快速的构建一个工程，过程中遇到的一个问题就是配置文件，springboot推荐使用`.properities`或`yml`两种方式。配置文件中会分别配置测试与生产环境，如下是一个完整的配置：  
 ```
