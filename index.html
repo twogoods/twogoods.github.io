@@ -225,13 +225,13 @@
       
       
   
-    <h1 class="title"><a href="/2017/04/01/jar/">jar</a></h1>
+    <h1 class="title"><a href="/2017/04/01/jar/">jar包中内容的读取</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h1 id="jar包中内容的读取"><a href="#jar包中内容的读取" class="headerlink" title="jar包中内容的读取"></a>jar包中内容的读取</h1><p>最近几天有空在折腾<a href="https://github.com/twogoods/tiny4j">tiny4j</a>里一直想试着实现的类似springboot的可执行jar包。在<code>component-scan</code>包扫描这一步碰上点小问题，记录一下。<br>项目的<code>Bean</code>都是基于<code>component-scan</code>扫描得到的，要实现这个功能首先根据配置的包名查找的资源路径，这一点可以通过类加载器来得到,它可以在运行时动态的获取加载的类的信息<code>class.getClass().getResource(packageName);</code>这个函数返回一个迭代URL。
+        <p>最近几天有空在折腾<a href="https://github.com/twogoods/tiny4j">tiny4j</a>里一直想试着实现的类似springboot的可执行jar包。在<code>component-scan</code>包扫描这一步碰上点小问题，记录一下。<br>项目的<code>Bean</code>都是基于<code>component-scan</code>扫描得到的，要实现这个功能首先根据配置的包名查找的资源路径，这一点可以通过类加载器来得到,它可以在运行时动态的获取加载的类的信息<code>class.getClass().getResource(packageName);</code>这个函数返回一个迭代URL。
       
     </div>
     <footer>
@@ -515,7 +515,7 @@
   <ul class="entry">
     
       <li>
-        <a href="/2017/04/01/jar/">jar</a>
+        <a href="/2017/04/01/jar/">jar包中内容的读取</a>
       </li>
     
       <li>
