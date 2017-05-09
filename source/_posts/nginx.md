@@ -3,7 +3,7 @@ date: 2016-03-02 13:59:19
 categories: nginx
 tags: nginx
 ---
-nginx可能还是运维玩的多，不过也要了解一点，有助于对程序，架构的理解。  
+nginx是著名的反向代理服务器，负载均衡利器，利用一些脚本甚至可以实现动态的负载均衡。这里只是记一下入门的helloworld。  
 
 启动nginx ，sudo nginx ;访问localhost:8080 发现已出现nginx的欢迎页面了。
 配置文件：/usr/local/etc/nginx/nginx.conf  

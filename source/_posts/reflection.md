@@ -42,7 +42,7 @@ public class SampleBean {
         System.out.println("normal:"+(System.currentTimeMillis() - start));
 ```
 输出很有意思：fastmethod:196 > reflect:139 > normal:72,cglib是最慢的？！！！如果使用注释的代码跑，fastmethod:38 > reflect:33 > normal:25,时间省了很多但三者的大小顺序没变，时间变少我猜测是百万次调用的参数不变被优化了。
-于是我怀疑我的测试代码是不是有问题，在网上看了一通发现Java的benchmark是不容易做的，要剔除无关的操作，还要做好JVM的JIT预热，而且有多种gc算法。
+于是我怀疑我的测试代码是不是有问题，在网上看了一通发现Java的benchmark是不容易做的，要剔除无关的操作，还要做好JVM的JIT预热，而且有多种gc算法。所以上述所谓的性能测试就是扯淡，不靠谱的...
 而对于我颇感意外的cglib不如Java自身反射api快的结论，在cglib的文档上也能看到一点端倪：
 > However, the newer versions of the HotSpot JVM (and probably many other modern JVMs) know a concept called inflation where the JVM will translate reflective method calls into native version's of FastClass when a reflective method is executed often enough.  I would therefore recommend to not use FastClass on modern JVMs, it can however fine-tune performance on older Java virtual machines.
 

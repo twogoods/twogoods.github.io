@@ -9,4 +9,4 @@ tags: docker
 `docker run -e "SPRING_PROFILES_ACTIVE=dev" -p 9002:9001 --name book-dev -t bookplatform`
 `docker logs {containername}`可以查看日志，不过感觉这种方式不好，当然也可以把日志挂载到本地的目录方便查看，当然这一块的最佳实践还是去看看人家生产环境的经验分享比较好。既然是虚拟机当然也可以进入终端了`docker exec -i -t {containername} /bin/sh`  
 
-以上都挺简单的，`dockerfile`的使用还是要多看看，docker算是开了个头。
+以上都挺简单的，`dockerfile`要多写写，docker算是开了个头。
