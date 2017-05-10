@@ -113,7 +113,7 @@ pages:
 # Available value:
 #     duoshuo | disqus
 comment:
-    use: duoshuo
+    use: disqus
     shortname: twogoods
     duoshuo_thread_key: path
     duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
