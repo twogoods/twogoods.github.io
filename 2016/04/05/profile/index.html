@@ -293,10 +293,10 @@
 
 <section id="comment">
 
-  <!-- 多说评论框 start -->
+  <!-- 
   <div class="ds-thread" data-thread-key="2016/04/05/profile/" data-title="profile及配置服务" data-url="http://twogoods.github.io/2016/04/05/profile/"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"twogoods"};
   (function() {
@@ -308,8 +308,22 @@ var duoshuoQuery = {short_name:"twogoods"};
      || document.getElementsByTagName('body')[0]).appendChild(ds);
   })();
   </script>
-<!-- 多说公共JS代码 end -->
+ -->
 
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'twogoods',
+  repo: 'twogoods.github.io',
+  oauth: {
+    client_id: '91f17501ad851ab9adbd',
+    client_secret: '2734ec718d13648964296731e577329d008ad014',
+  },
+})
+gitment.render('container')
+</script>
   
 </section>
 
