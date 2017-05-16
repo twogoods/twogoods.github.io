@@ -221,6 +221,117 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-10-17T12:05:23.000Z"><a href="/2015/10/17/小整理/">2015-10-17</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/17/小整理/">一些整理</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>看了《java并发编程实战》确实有一些可以梳理，也可以通过jdk的源码得到答案。  </p>
+<ul>
+<li><p>java voliate关键字与指令重排序  </p>
+<p>缓存一致性问题和指令重排序的问题<a href="http://my.oschina.net/chihz/blog/58035" target="_blank" rel="external">解释1</a>,<a href="http://www.cnblogs.com/dolphin0520/p/3920373.html" target="_blank" rel="external">解释2</a></p>
+</li>
+<li><p>hashmap的<a href="http://www.360doc.com/content/10/0505/19/495229_26234886.shtml" target="_blank" rel="external">实现</a>，<a href="http://www.nowcoder.com/discuss/1808?type=1&amp;order=0&amp;pos=28&amp;page=0" target="_blank" rel="external">另一个</a></p>
+</li>
+<li><p><a href="http://ifeve.com/concurrenthashmap/" target="_blank" rel="external">concurrenthashmap的实现</a></p>
+</li>
+<li><a href="http://ifeve.com/java-copy-on-write/" target="_blank" rel="external">copyonwrite</a>,写时复制，读时不加锁，所以读可能是旧值，只保证最终一致性，不能保证数据的实时一致性，适合读多写少的并发场景</li>
+<li>java内存泄露：<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//person 利用名字，年龄等属性重写了hashcode方法</span></span><br><span class="line">HashSet&lt;Person&gt; hs=<span class="literal">new</span> HashSet&lt;Person&gt;();</span><br><span class="line">Person p=<span class="literal">new</span> Person(<span class="string">"张三"</span>,<span class="number">25</span>);</span><br><span class="line">p.setAge(<span class="number">10</span>);</span><br><span class="line">hs.remove(p);</span><br><span class="line"><span class="comment">//这里会无法删除，修改属性后hashcode变了，也就无法找到并删除这个对象了</span></span><br><span class="line"><span class="comment">//-----或者想下面这样--------</span></span><br><span class="line"><span class="built_in">Map</span> <span class="built_in">map</span> = <span class="literal">new</span> HashMap();</span><br><span class="line"><span class="comment">//key未重写hashcode和equal方法</span></span><br><span class="line"><span class="comment">//直接这样增加的话，没有new Key()的这样引用，永远无法取出来和移除这个键值对</span></span><br><span class="line"><span class="built_in">map</span>.put(<span class="literal">new</span> Key(<span class="string">"key"</span>), <span class="string">"value"</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+
+
+
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-08-04T03:41:57.000Z"><a href="/2015/08/04/bolg/">2015-08-04</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/08/04/bolg/">一个简易的博客</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>很不要脸的拿了一大堆轮子造了个不像博客的博客，当然不是你现在看到的这个啦，不管怎样还是花了心思的，所以简单的说一说。<br>这东西是平常有空全凭兴趣搞的，当初主要是想弄个班级的展示页面，发现就一个页面的话也太单调了，想到给一些自定义内容的功能吧，这么一来二去就变成了这个博客。<br>说起来自己主要是搞java的，这活主要还是前端的活，但当初在学的时候一些基本的html,css,js都了解过，虽说不是举步维艰但也确实是不太熟悉。java总是跟企业级开发联系在一起，拿它写似乎也没必要，这不正好也了解过一点node拿来写写简单的逻辑还是可以的，这个博客也就算是自己学node的一个helloworld吧。  </p>
+<ul>
+<li><a href="http://tgblog.coding.io" target="_blank" rel="external">演示</a></li>
+<li><a href="https://github.com/twogoods/tgblog" target="_blank" rel="external">代码</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+
+
+
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-07-22T14:13:59.000Z"><a href="/2015/07/22/jsonp/">2015-07-22</a></time>
       
       
@@ -414,107 +525,6 @@
 
 
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-04-20T12:24:55.000Z"><a href="/2015/04/20/startNode/">2015-04-20</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/04/20/startNode/">Node初步</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>其实node在去年就接触过了，最近想进一步接触了解一下，发现菜鸟时遇到的问题还是有必要记一下。</p>
-<p>全局安装express：<br> <code>npm install -g express</code><br> express 安装好后命令行还不能使用express命令，需安装express-generato包：<br>  <code>npm install -g express-generator</code><br>  启动express：<br>  <code>npm start</code><br>  当修改代码时每次都要重启服务器会很不方便，node有一个小工具supervisor，安装后使用此工具会根据代码的改动自动重新部署。<br>  安装supervisor：<br>  <code>npm -g install supervisor</code><br>在 package.json里有这样的代码<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"><span class="string">"start"</span>: <span class="string">"node ./bin/www"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>  所以我们可以使用如下命令来启动express：<br><code>supervisor node ./bin/www</code></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-
-
-
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-03-12T14:08:19.000Z"><a href="/2015/03/12/callback/">2015-03-12</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/03/12/callback/">理解java中的回调</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>在《java编程思想》一书中时不时的提到设计模式，书中也出现了回调，在学习的时候经常听到这个词，也有必要真正去弄明白什么叫<strong>回调</strong>？<br><strong>回调</strong>用一句话解释就是，被调用方在被调用时也会调用对方。形象一点说”If you call me, i will call back”。举个生活中简单的例子：有一位老板很忙，他没有时间盯着员工干活，然后他告诉自己的雇员，干完当前这些事情后，告诉他干活的结果。<br>接下来的代码演示了这个过程：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 回调接口,指明用什么方式跟老板汇报，所以老板应该实现这个接口</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">CallBackInterface</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">callback</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/03/12/callback/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-
-
-
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -539,7 +549,7 @@
   
     <li><a href="/categories/go/">go</a><small>1</small></li>
   
-    <li><a href="/categories/java/">java</a><small>11</small></li>
+    <li><a href="/categories/java/">java</a><small>13</small></li>
   
     <li><a href="/categories/javascript/">javascript</a><small>2</small></li>
   
@@ -565,7 +575,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 20px;">mybatis</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 20px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/小记/" style="font-size: 10px;">小记</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 20px;">mybatis</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 20px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/小记/" style="font-size: 10px;">小记</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
   </div>
 </div>
 
@@ -574,6 +584,14 @@
 <div class="widget tag">
   <h3 class="title">最新文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/05/14/CAS/">CAS中的遇到的一些问题</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/27/IO-Model/">简单聊聊异步同步</a>
+      </li>
     
       <li>
         <a href="/2017/04/11/mysql/">mysql笔记</a>
@@ -585,14 +603,6 @@
     
       <li>
         <a href="/2017/04/01/jar/">jar包中内容的读取</a>
-      </li>
-    
-      <li>
-        <a href="/2017/02/25/docker/">docker</a>
-      </li>
-    
-      <li>
-        <a href="/2017/02/22/hellorpc/">HelloRPC</a>
       </li>
     
   </ul>

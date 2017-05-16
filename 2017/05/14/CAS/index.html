@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CAS中的遇到的一些问题 | Twogoods</title>
+  <meta name="author" content="twogoods">
+  
+  <meta name="description" content="twogoods&#39; blog">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="CAS中的遇到的一些问题"/>
+  <meta property="og:site_name" content="Twogoods"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="Twogoods" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="http://apps.bdimg.com/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">Twogoods</a></h1>
+  <h2><a href="/">每一步都是一个脚印</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+<li> <a title="累了？请猛戳" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+
+  <a href="https://github.com/twogoods"><img style="position: absolute; z-index:80; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+  
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-05-14T14:48:34.000Z"><a href="/2017/05/14/CAS/">2017-05-14</a></time>
+      
+      
+  
+    <h1 class="title">CAS中的遇到的一些问题</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>看并发看到了无锁的CAS，都说无锁没有锁竞争带来的开销，也没有线程间频繁调度的开销，比基于锁的方式有更好的性能。小白看了很激动，这么好的工具赶紧用起来。于是想试着把以前的一段并发代码改一改。<a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BenchController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object[] lockObj;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> AtomicReference&lt;Integer&gt;[] locks;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        lockObj = <span class="keyword">new</span> Object[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lockObj.length; i++) &#123;</span><br><span class="line">            lockObj[i] = <span class="keyword">new</span> Object();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        locks = <span class="keyword">new</span> AtomicReference[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; locks.length; i++) &#123;</span><br><span class="line">            locks[i] = <span class="keyword">new</span> AtomicReference&lt;Integer&gt;(<span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"a/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">a</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id) <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">int</span> index = id % <span class="number">100</span>;</span><br><span class="line">        <span class="keyword">long</span> inner = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">synchronized</span> (lockObj[index]) &#123;</span><br><span class="line">            inner = test();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> result = System.currentTimeMillis() - start;</span><br><span class="line">        System.out.println(<span class="string">"all: "</span> + result + <span class="string">" inner: "</span> + inner);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"b/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">b</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id) <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        id = id % <span class="number">100</span>;</span><br><span class="line">        AtomicReference&lt;Integer&gt; lock = locks[id];</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!lock.compareAndSet(<span class="keyword">null</span>, id)) &#123;</span><br><span class="line">            b = <span class="number">1</span> + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> inner = test();</span><br><span class="line">        <span class="keyword">boolean</span> flag = lock.compareAndSet(id, <span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">long</span> result = System.currentTimeMillis() - start;</span><br><span class="line">        System.out.println(<span class="string">"all: "</span> + result + <span class="string">" inner: "</span> + inner + <span class="string">" flag:"</span> + flag);</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">test</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> innerstart = System.currentTimeMillis();</span><br><span class="line">        Thread.sleep(<span class="number">200</span>);</span><br><span class="line">        System.out.println(System.currentTimeMillis() - innerstart);</span><br><span class="line">        <span class="keyword">return</span> System.currentTimeMillis() - innerstart;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码的场景很简单，多个用户可能对一个id的订单做操作，而业务上只能有一个用户操作成功，当初实现的时候用的<code>a()</code>方法，基于无锁的思路我添加了b。用Jmeter每秒发20个同id的请求，结果很意外，有锁代码明显好于无锁的代码。当然这绝不是一个靠谱的性能测试办法，但这也抛给我一个问题，无锁不是号称性能很好嘛，为什么这里这么差？再往下走我发现了一个怪异的问题，在使用无锁的情况下我特地独立出来的<code>test()</code>里打印的睡眠时间和200毫秒相差巨大…这里非常的怪异，sleep有几个毫秒的误差是正常的，然而实际的误差有的实在太大。花了很长时间，问了问别人，我发现了这其中的一些问题：在我的机器上每秒20个线程请求无锁代码，我的cpu被占满了，再仔细想一想就会发现CAS操作虽然免去了线程调度的开销，然而不能忽略它不断尝试直到成功的那段死循环对CPU负载的影响，CAS下的所有线程都是活跃线程（这里可以联系一下JVM锁优化里的自旋锁，线程没拿到锁不会马上挂起，而是自旋等待一会儿，如果这时拿到锁就省去了线程调度的开销）。回到这个例子当中，200毫秒的睡眠不是一个短的时间，每秒20个请求远远超出了处理能力，有大量的线程占用着“无意义”的CPU计算资源。</p>
+<p>后来我又看到了这篇讨论AtomicInteger的<a href="http://ifeve.com/enhanced-cas-in-jdk8/" target="_blank" rel="external">文章</a>,文中显式的调用<code>compareAndSet()</code>方法，结果是不如<code>synchronized</code>来的好。当然我已经不止一次被告知在测试细微性能差别的时候Main方法往往是不靠谱的,那应该怎么测试呢？jmh。</p>
+<h2 id="jmh"><a href="#jmh" class="headerlink" title="jmh"></a>jmh</h2><p>编写测试代码，使用注解，然后jmh完成剩下一切。<br>Mode:</p>
+<ul>
+<li>Mode.Throughput 指定多少次迭代，计算总时间 op/s</li>
+<li>Mode.AverageTime 方法执行的平均时间 op/s</li>
+<li>Mode.SampleTime 不测量总时间，测量某一部分调用的时间，所以结果中你能看到 p0.5，p0.9</li>
+<li>Mode.SingleShotTime 每次迭代只执行一次</li>
+</ul>
+<p>state:</p>
+<ul>
+<li>Scope.Thread:线程私有</li>
+<li>Scope.Benchmark：线程共享</li>
+</ul>
+<p>Dead-Code Elimination (DCE)</p>
+<pre><code>@Benchmark
+public double measureWrong() {
+    Math.log(x1);//注意编译器优化，这一行无意义，会被优化掉，使用后面两种方式
+    return Math.log(x2);
+}
+@Benchmark
+public double measureRight_1() {
+    return Math.log(x1) + Math.log(x2);
+}
+@Benchmark
+public void measureRight_2(Blackhole bh) {
+    bh.consume(Math.log(x1));
+    bh.consume(Math.log(x2));
+}
+--------------------------------------------
+private double x = Math.PI;
+private final double wrongX = Math.PI;
+@Benchmark
+public double measureWrong_1() {
+    // 值被预测，不执行计算
+    return Math.log(Math.PI);
+}
+@Benchmark
+public double measureWrong_2() {
+    // final类型依旧被优化
+    return Math.log(wrongX);
+}
+
+@Benchmark
+public double measureRight() {
+    return Math.log(x);
+}
+</code></pre><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>使用微基准测试框架JMH再测试一遍：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@OutputTimeUnit</span>(TimeUnit.NANOSECONDS)</span><br><span class="line"><span class="variable">@Warmup</span>(iterations = <span class="number">5</span>)</span><br><span class="line"><span class="variable">@Measurement</span>(iterations = <span class="number">10</span>, time = <span class="number">5</span>, timeUnit = TimeUnit.SECONDS)</span><br><span class="line"><span class="variable">@BenchmarkMode</span>(Mode.AverageTime)</span><br><span class="line"><span class="variable">@State</span>(Scope.Benchmark)</span><br><span class="line">public class Test &#123;</span><br><span class="line">    private AtomicInteger atomic;</span><br><span class="line">    private Object lock = new Object();</span><br><span class="line">    private int i = 0;</span><br><span class="line">    <span class="variable">@Setup</span></span><br><span class="line">    public void setUp() &#123;</span><br><span class="line">        atomic = new AtomicInteger(0);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">@Fork</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="variable">@Threads</span>(<span class="number">10</span>)</span><br><span class="line">    <span class="variable">@Benchmark</span></span><br><span class="line">    public int incrementAtomic() &#123;</span><br><span class="line">        return atomic<span class="selector-class">.incrementAndGet</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">@Fork</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="variable">@Threads</span>(<span class="number">10</span>)</span><br><span class="line">    <span class="variable">@Benchmark</span></span><br><span class="line">    public int cas() &#123;</span><br><span class="line">        int i;</span><br><span class="line">        <span class="selector-tag">do</span> &#123;</span><br><span class="line">            i = atomic<span class="selector-class">.get</span>();</span><br><span class="line">        &#125; while (!atomic.compareAndSet(i, i + <span class="number">1</span>));</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">@Fork</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="variable">@Threads</span>(<span class="number">10</span>)</span><br><span class="line">    <span class="variable">@Benchmark</span></span><br><span class="line">    public int incrementSync() &#123;</span><br><span class="line">        <span class="selector-tag">synchronized</span> (lock) &#123;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        return i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">显式使用compareAndSet性能并不好，至于为什么，文末的讨论能提供一些帮助</span><br><span class="line">Benchmark             Mode  Cnt     Score    Error  Units</span><br><span class="line">Test<span class="selector-class">.cas</span>              avgt   <span class="number">10</span>  <span class="number">1071.773</span> ± <span class="number">21.083</span>  ns/op</span><br><span class="line">Test<span class="selector-class">.incrementAtomic</span>  avgt   <span class="number">10</span>   <span class="number">363.205</span> ±  <span class="number">1.198</span>  ns/op</span><br><span class="line">Test<span class="selector-class">.incrementSync</span>    avgt   <span class="number">10</span>   <span class="number">748.514</span> ±  <span class="number">8.889</span>  ns/op</span><br></pre></td></tr></table></figure>
+<p>再给出最早的那个例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@OutputTimeUnit</span>(TimeUnit.NANOSECONDS)</span><br><span class="line"><span class="meta">@Warmup</span>(iterations = <span class="number">5</span>)</span><br><span class="line"><span class="meta">@Measurement</span>(iterations = <span class="number">10</span>, time = <span class="number">5</span>, timeUnit = TimeUnit.SECONDS)</span><br><span class="line"><span class="meta">@BenchmarkMode</span>(Mode.AverageTime)</span><br><span class="line"><span class="meta">@State</span>(Scope.Benchmark)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CASBench</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> Integer id=<span class="number">24</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object[] lockObj;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> AtomicReference&lt;Integer&gt;[] locks;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Setup</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       lockObj = <span class="keyword">new</span> Object[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lockObj.length; i++) &#123;</span><br><span class="line">            lockObj[i] = <span class="keyword">new</span> Object();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        locks = <span class="keyword">new</span> AtomicReference[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; locks.length; i++) &#123;</span><br><span class="line">            locks[i] = <span class="keyword">new</span> AtomicReference&lt;Integer&gt;(<span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Fork</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="meta">@Threads</span>(<span class="number">10</span>)</span><br><span class="line">    <span class="meta">@Benchmark</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sync</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = id % <span class="number">100</span>;</span><br><span class="line">        <span class="keyword">synchronized</span> (lockObj[index]) &#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Fork</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="meta">@Threads</span>(<span class="number">10</span>)</span><br><span class="line">    <span class="meta">@Benchmark</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">cas</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        AtomicReference&lt;Integer&gt; lock = locks[id % <span class="number">100</span>];</span><br><span class="line">        <span class="keyword">while</span> (!lock.compareAndSet(<span class="keyword">null</span>, id)) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        count++;</span><br><span class="line">        lock.compareAndSet(id, <span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">结果：</span><br><span class="line">Benchmark      Mode  Cnt     Score     Error  Units</span><br><span class="line">CASBench.cas   avgt   <span class="number">10</span>  <span class="number">3441.711</span> ± <span class="number">220.316</span>  ns/op</span><br><span class="line">CASBench.sync  avgt   <span class="number">10</span>   <span class="number">796.758</span> ±  <span class="number">26.033</span>  ns/op</span><br></pre></td></tr></table></figure>
+<p>从结果中可以看到，文章开头的那个改造并不是一个好的选择。还是菜鸟，关于并发，CAS还是应该去多看看juc的代码。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/java/">java</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/并发/">并发</a>
+  </div>
+
+
+<!-- Baidu Button BEGIN -->
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_more" data-cmd="more"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["tsina","weixin","qzone","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","weixin","qzone","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!-- Baidu Button END -->      
+
+
+
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    
+    <a href="/2017/04/27/IO-Model/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+  <!-- 
+  <div class="ds-thread" data-thread-key="2017/05/14/CAS/" data-title="CAS中的遇到的一些问题" data-url="http://twogoods.github.io/2017/05/14/CAS/"></div>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"twogoods"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+ -->
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'twogoods',
+  repo: 'twogoods.github.io',
+  oauth: {
+    client_id: '91f17501ad851ab9adbd',
+    client_secret: '2734ec718d13648964296731e577329d008ad014',
+  },
+})
+gitment.render('container')
+</script>
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Node/">Node</a><small>2</small></li>
+  
+    <li><a href="/categories/docker/">docker</a><small>1</small></li>
+  
+    <li><a href="/categories/git/">git</a><small>2</small></li>
+  
+    <li><a href="/categories/go/">go</a><small>1</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>13</small></li>
+  
+    <li><a href="/categories/javascript/">javascript</a><small>2</small></li>
+  
+    <li><a href="/categories/mysql/">mysql</a><small>1</small></li>
+  
+    <li><a href="/categories/nginx/">nginx</a><small>1</small></li>
+  
+    <li><a href="/categories/redis/">redis</a><small>1</small></li>
+  
+    <li><a href="/categories/产品/">产品</a><small>1</small></li>
+  
+    <li><a href="/categories/小玩意/">小玩意</a><small>1</small></li>
+  
+    <li><a href="/categories/生活/">生活</a><small>1</small></li>
+  
+    <li><a href="/categories/记录/">记录</a><small>4</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 20px;">mybatis</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 20px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/小记/" style="font-size: 10px;">小记</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/05/14/CAS/">CAS中的遇到的一些问题</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/27/IO-Model/">简单聊聊异步同步</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/11/mysql/">mysql笔记</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/05/reflection/">Java反射的一点总结</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/01/jar/">jar包中内容的读取</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <iframe width="100%" height="700" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=700&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2942070602&verifier=d8b0c9a5&dpc=1"></iframe>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><section>
+&copy;twogoods &nbsp;
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7065f5fa5f89a8ce45195696b1224959";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
