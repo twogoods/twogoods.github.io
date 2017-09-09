@@ -14,7 +14,7 @@ count= sql.query("select * from table");//10毫秒
 future=executor.submit(()->sql.query("select * from table"));
 future2=executor.submit(()->sql.query("select * from table"));
 ```
-我们启用线程池，配合Future，`future.get()`会阻塞到操作完成，最终两个操作可以从25毫秒缩短到15毫秒，在实习当中不少同事就会把这样的代码叫做异步的，或许这样的说法久了大家就默认了，但这本质上不是异步。
+我们启用线程池，配合Future，`future.get()`会阻塞到操作完成，最终两个操作可以从25毫秒缩短到15毫秒，在实习当中不少同事就会把这样的代码叫做异步的，其实没错，但这跟操作系统的IO模型会有一些不同。
 ### IO模型
 讲这个前自然要先说说阻塞与非阻塞，异步与同步。
 
