@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>异步编程杂谈 | Twogoods</title>
+  <meta name="author" content="twogoods">
+  
+  <meta name="description" content="twogoods&#39; blog">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="异步编程杂谈"/>
+  <meta property="og:site_name" content="Twogoods"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="Twogoods" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="http://apps.bdimg.com/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">Twogoods</a></h1>
+  <h2><a href="/">每一步都是一个脚印</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+<li> <a title="累了？请猛戳" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+
+  <a href="https://github.com/twogoods"><img style="position: absolute; z-index:80; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+  
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-09-09T15:50:57.000Z"><a href="/2017/09/09/async/">2017-09-09</a></time>
+      
+      
+  
+    <h1 class="title">异步编程杂谈</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>响应式编程、RxJava、Vert.x、异步编程、事件驱动、NodeJs、Callback、高性能，一堆很诱惑人的名词，折腾了一段时间，总结一些内容也提出一些疑问。<a id="more"></a></p>
+<h2 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h2><p>关于异步和同步，阻塞与非阻塞，给一个在IO模型里的定义：</p>
+<blockquote>
+<p>阻塞与非阻塞关注的是线程的状态，IO操作会不会把当前线程挂起。<br>同步和异步关注的是消息通知机制，调用者需不需要关注这个数据返回。</p>
+</blockquote>
+<p>关于IO模型这里有<a href="http://twogoods.github.io/2017/04/27/IO-Model/">一篇</a>，它在说的操作系统里的IO模型。它似乎跟我们日常开发过程中的一些地方有区别，如Java的这段代码，它非阻塞吧，它是异步吗？应该也是吧，开了异步线程去执行了啊。但是再去套一下上面的异步与非阻塞的定义，似乎说它是同步非阻塞才对啊，在这里我们调用者是<strong>关注</strong>这个结果的嘛。<br><code>executor.submit(()-&gt;sql.query(&quot;select * from table&quot;));</code></p>
+<p>说到异步非阻塞，总要提NodeJs，它是怎么实现异步IO的呢？下面摘一段《深入浅出NodeJs里的解释》：</p>
+<blockquote>
+<p>通过让部分线程进行阻塞IO或者非阻塞IO加轮询技术(NIO,epoll)来完成数据获取，让一个线程进行计算处理，通过线程之间的通信将IO得到的数据进行传递，这就轻松实现了异步IO(尽管它是模拟的)</p>
+</blockquote>
+<p>这段话似乎和我们上面的代码例子很像哦，它通过用异步线程的方式来执行IO操作，就像这段话最后的括号所说，尽管它是模拟的(这里是跟操作系统提供的AIO做比较)。<br>这么看来实现异步也不难嘛，造一个线程池，把IO操作放进独立的线程里去执行，这就是一个非常朴素的异步思想啊。</p>
+<h2 id="Vert-x"><a href="#Vert-x" class="headerlink" title="Vert.x"></a>Vert.x</h2><p>Vert.x 是Java语言下的一个异步框架，跟NodeJs非常非常的像，我们简单了解一下它是这么实现的。如下数据库查询操作，和Nodejs的写法几乎一样吧！</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">client</span><span class="selector-class">.getConnection</span>(res -&gt; &#123;</span><br><span class="line">      SQLConnection connection = res<span class="selector-class">.result</span>();</span><br><span class="line">      <span class="selector-tag">connection</span><span class="selector-class">.query</span>(<span class="string">"SELECT count(1) FROM T_User"</span>, res2 -&gt; &#123;</span><br><span class="line">          <span class="selector-tag">connection</span><span class="selector-class">.query</span>(<span class="string">"SELECT count(1) FROM T_Book"</span>, res3 -&gt; &#123;</span><br><span class="line">              System<span class="selector-class">.out</span><span class="selector-class">.println</span>(res2.result().getRows() + <span class="string">"--"</span> + res3.result().getRows());</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>我们只看<code>getConnection</code>操作，其他都类似。<code>getConnection</code>传入一个回调函数</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> SQLClient getConnection(Handler&lt;AsyncResult&lt;SQLConnection&gt;&gt; handler) &#123;</span><br><span class="line">       Context ctx = <span class="keyword">this</span>.vertx.getOrCreateContext();</span><br><span class="line">       <span class="comment">// 在线程池中取线程执行真正的拿数据库连接的工作</span></span><br><span class="line">       <span class="keyword">this</span>.exec.execute(() -&gt; &#123;</span><br><span class="line">           Future res = Future.future();</span><br><span class="line">           <span class="keyword">try</span> &#123;</span><br><span class="line">               Connection conn = <span class="keyword">this</span>.ds.getConnection();</span><br><span class="line">               Object execMetric = <span class="literal">null</span>;</span><br><span class="line">               SQLConnection sconn = new JDBCConnectionImpl(ctx, <span class="keyword">this</span>.helper, conn, metrics, execMetric, <span class="keyword">this</span>.rowStreamFetchSize);</span><br><span class="line">               res.complete(sconn);</span><br><span class="line">           &#125; <span class="keyword">catch</span> (SQLException var9) &#123;</span><br><span class="line">               res.fail(var9);</span><br><span class="line">           &#125;</span><br><span class="line">           ctx.runOnContext((v) -&gt; &#123;</span><br><span class="line">               <span class="comment">//取到数据库连接执行回调函数，</span></span><br><span class="line">               <span class="comment">//这个回调函数又会在另一个线程里执行，这个线程是eventloop线程</span></span><br><span class="line">               res.setHandler(handler);           </span><br><span class="line">            &#125;);</span><br><span class="line">       &#125;);</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>看到这里，如果让你封装一个异步操作的API，相信你也能很快做出来。Ok，简单了解了实现，那么一个有意思的问题来了。上面的源代码中，获得数据库连接是在通过<code>this.exec.execute</code>在一个线程池中执行的，那回调函数为什么在<code>ctx.runOnContext</code>事件循环线程中执行，继续使用<code>this.exec.execute</code>执行不行吗？其实在当前的这个场景下看起来是可以的，更大的原因是我们有一系列的回调函数，我们都会让回调函数在EventLoop中执行，这样可以很方便的重新回到事件循环中去。可以<a href="https://stackoverflow.com/questions/46030041/some-questions-about-thread-pool-in-vert-x/46030664#46030664" target="_blank" rel="external">参考stackoverflow</a>。</p>
+<p>再看一下NodeJs异步的实现方式，Vert.x 和它是不是几乎是一样的。<br><img src="http://oepm97cib.bkt.clouddn.com/node.jpeg" alt="Node异步IO实现"></p>
+<h2 id="callback"><a href="#callback" class="headerlink" title="callback"></a>callback</h2><p>在说callback之前要先说说另一个话题，为什么利用异步非阻塞IO的NodeJs一出来就标榜高性能，到底高性能在哪了？你会不会觉得我这个问题问的莫名其妙，异步非阻塞的我一个操作调用了就可以立马去做下一个操作了不需要等待，当然性能高啦！前面这句话该怎么理解呢？我用自己的思维方式尝试着理解了一下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//一个耗时15ms,一个10ms</span><br><span class="line">data = sql.query("<span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span><span class="string">");</span><br><span class="line">count= sql.query("</span><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span><span class="string">");</span><br><span class="line">//time=15+10</span><br><span class="line"></span><br><span class="line">future=executor.submit(()-&gt;sql.query("</span><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span><span class="string">"));</span><br><span class="line">future2=executor.submit(()-&gt;sql.query("</span><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span><span class="string">"));</span><br><span class="line">//time=max(15,10)</span></span><br></pre></td></tr></table></figure>
+<p>这样抽象过后，从本质上来说这是并行带来的好处。我们把关注点放在<code>sql.query</code>这个IO操作上，如果这个IO是阻塞的，那这里我们只享受到了两个query并行带来的好处，并没有享受到非阻塞IO带来的好处。试想一下，我们开了两个线程，可是这两个线程在执行query操作的时候都阻塞了，经历了线程被挂起再被唤醒的过程，如果系统大量的都是这种操作，那么线程切换的开销也是巨大的。所以总结一下，一个是多个操作可以并行所带来的优势，一个还是非阻塞IO带来的硬件资源充分利用的优势。(以上，欢迎指出错误。)</p>
+<p>当我知道了这些，似乎获得了魔法，急着跑回到Java世界想用异步改造我的代码，可结果是….大量的业务逻辑都是前后依赖，没什么并行度，强行上异步没得到啥好处的同时引入了复杂度。我们说callback是异步世界写同步代码所呈现的形式，如果你的代码里类似的callback多，那说明这个操作内部并行度本身就不高，并行带来的好处不大。现在Java里大大小小的框架大都没有异步API，没有非阻塞IO，改造往往是从入门到放弃。延伸一下，<a href="https://www.zhihu.com/question/23084473" target="_blank" rel="external">为什么JDBC操作不用NIO?</a></p>
+<p>好，现在我们再聊callback，异步编程的风格将函数的业务重点从放回值转移到了回调函数中。依然用Vert.x的那段代码，这里callback套了三层。为什么会嵌套？由于各个操作会依赖于前一个操作，不可避免的就嵌套了，因此在异步为主导的编程框架里，就容易写成callback一层一层嵌套的形式。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">client</span><span class="selector-class">.getConnection</span>(res -&gt; &#123;</span><br><span class="line">       SQLConnection connection = res<span class="selector-class">.result</span>();</span><br><span class="line">       <span class="selector-tag">connection</span><span class="selector-class">.query</span>(<span class="string">"SELECT count(1) FROM T_User"</span>, res2 -&gt; &#123;</span><br><span class="line">           <span class="selector-tag">connection</span><span class="selector-class">.query</span>(<span class="string">"SELECT count(1) FROM T_Book"</span>, res3 -&gt; &#123;</span><br><span class="line">               System<span class="selector-class">.out</span><span class="selector-class">.println</span>(res2.result().getRows() + <span class="string">"--"</span> + res3.result().getRows());</span><br><span class="line">           &#125;);</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
+<p>在一般的Java项目里我们会用同步的方式会这么写：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SQLConnection connection=client.getConnection();</span><br><span class="line">data1=connection.query("<span class="keyword">SELECT</span> <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">FROM</span> T_User<span class="string">");</span><br><span class="line">data2=connection.query("</span><span class="keyword">SELECT</span> <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">FROM</span> T_Book<span class="string">");</span></span><br></pre></td></tr></table></figure>
+<p>有了比较，我们可以更一针见血的说，callback的产生是因为要在异步为主导的世界里写同步代码而不得不采取的做法。当然啦，callback hell 很难受，NodeJs提供了多个API来解决这个问题，我不太熟这个所以不打算深入介绍，但是上面这个Java写的例子我们有必要解决一下。</p>
+<h2 id="响应式编程和异步编程"><a href="#响应式编程和异步编程" class="headerlink" title="响应式编程和异步编程"></a>响应式编程和异步编程</h2><p>响应式编程的两个特点是异步与流，它帮助你用最简便的方式实现异步，并且它将一切看作流，从这个流出发，过滤、组合、变换。即将到来的JDK9也会实现响应式编程的规范带来<a href="https://community.oracle.com/docs/DOC-1006738" target="_blank" rel="external">Flow API</a>，随JDK9一起到来的Spring5正式版中也将引入对响应式web编程的<a href="https://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/reactive-web.html#webflux" target="_blank" rel="external">支持</a>。如果你是一个新手，建议参考这篇关于<a href="http://blog.csdn.net/womendeaiwoming/article/details/46506017" target="_blank" rel="external">响应式编程介绍</a>。</p>
+<p>我们利用RxJava 尝试着解决一下callabck的问题。还是SQL操作的代码：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">lient</span><span class="selector-class">.getConnection</span>(res -&gt; &#123;</span><br><span class="line">       SQLConnection connection = res<span class="selector-class">.result</span>();</span><br><span class="line">       <span class="selector-tag">connection</span><span class="selector-class">.query</span>(<span class="string">"SELECT count(1) FROM T_User"</span>, res2 -&gt; &#123;</span><br><span class="line">           <span class="selector-tag">connection</span><span class="selector-class">.query</span>(<span class="string">"SELECT count(1) FROM T_Book"</span>, res3 -&gt; &#123;</span><br><span class="line">               System<span class="selector-class">.out</span><span class="selector-class">.println</span>(res2.result().getRows() + <span class="string">"--"</span> + res3.result().getRows());</span><br><span class="line">           &#125;);</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
+<p>RxJava:</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">O<span class="function"><span class="title">bservable</span>&lt;SQLConnection&gt; conObservable = Observable.create(emitter -&gt;</span> &#123;</span><br><span class="line">            <span class="function"><span class="title">client</span>.getConnection(res -&gt;</span> &#123;</span><br><span class="line">                emitter.onNext(res.result());</span><br><span class="line">                emitter.onComplete();</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">O<span class="function"><span class="title">bservable</span>&lt;String&gt; data1 = conObservable.concatMap(connection -&gt;</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">return</span> Observable.create(observableEmitter -&gt;</span> &#123;</span><br><span class="line">      <span class="function"><span class="title">connection</span>.query("SELECT count(1) FROM T_User", res2 -&gt;</span> &#123;</span><br><span class="line">          observableEmitter.onNext(res2.result().getRows().toString());</span><br><span class="line">          observableEmitter.onComplete();</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">O<span class="function"><span class="title">bservable</span>&lt;String&gt; data2 = conObservable.concatMap(connection -&gt;</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">return</span> Observable.create(observableEmitter -&gt;</span> &#123;</span><br><span class="line">      <span class="function"><span class="title">connection</span>.query("SELECT count(2) FROM T_User", res2 -&gt;</span> &#123;</span><br><span class="line">          observableEmitter.onNext(res2.result().getRows().toString());</span><br><span class="line">          observableEmitter.onComplete();</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"> O<span class="function"><span class="title">bservable</span>.zip(data1, data2, (d1, d2) -&gt;</span> d1 + d2).subscribe(System.out::println);</span><br></pre></td></tr></table></figure>
+<p>Java8 CompletableFuture 也同样可以实现：</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">CompletableFuture&lt;SQLConnection&gt; promise = new CompletableFuture&lt;&gt;();</span><br><span class="line"><span class="function"><span class="title">client</span>.getConnection(res -&gt;</span> promise.complete(res.result()));</span><br><span class="line"><span class="function"><span class="title">promise</span>.thenCompose(conn -&gt;</span> &#123;</span><br><span class="line">  CompletableFuture&lt;String&gt; future = new CompletableFuture&lt;&gt;();</span><br><span class="line">  <span class="function"><span class="title">conn</span>.query("SELECT count(1) FROM T_User", <span class="keyword">data</span> -&gt;</span> &#123;</span><br><span class="line">      future.complete(<span class="keyword">data</span>.result().getRows().toString());</span><br><span class="line">  &#125;);</span><br><span class="line">  return future;</span><br><span class="line">&#125;).<span class="function"><span class="title">thenCompose</span>(s -&gt;</span> &#123;</span><br><span class="line">          CompletableFuture&lt;String&gt; future = new CompletableFuture&lt;&gt;();</span><br><span class="line">          <span class="function"><span class="title">promise</span>.thenAccept(conn -&gt;</span> &#123;</span><br><span class="line">              <span class="function"><span class="title">conn</span>.query("SELECT count(1) FROM T_User", <span class="keyword">data</span> -&gt;</span> &#123;</span><br><span class="line">                  future.complete(<span class="keyword">data</span>.result().getRows().toString() + <span class="string">"  "</span> + s);</span><br><span class="line">              &#125;);</span><br><span class="line">          &#125;);</span><br><span class="line">          return future;</span><br><span class="line">      &#125;</span><br><span class="line">).thenAccept(System.out::println);</span><br></pre></td></tr></table></figure>
+<p>虽然解决了层层嵌套的问题，但代码量实在是有点多，没办法，这就是Java，当然如果你有更好的办法请告诉我。</p>
+<p>异步编程也会带来一些不好处理的地方，典型的一个就是异常处理，异步执行的代码出异常了如何通知到调用的线程。NodeJs是通过在回调函数中传入error来处理异常，类似<code>db.query(&#39;select * from table , function(err,result){}</code>。Java编程中虽然RxJava还是封装了不错的异常处理机制，但比起同步模式下的编程，异步代码中的异常处理会是一个痛点。</p>
+<p>欢迎指正。</p>
+<p>参考：<br><a href="http://emacoo.cn/backend/reactive-overview/" target="_blank" rel="external">http://emacoo.cn/backend/reactive-overview/</a><br><a href="http://www.streamis.me" target="_blank" rel="external">http://www.streamis.me</a><br><a href="https://stackoverflow.com/questions/22412960/vert-x-and-bio-threading?rq=1" target="_blank" rel="external">https://stackoverflow.com/questions/22412960/vert-x-and-bio-threading?rq=1</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/java/">java</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/异步编程/">异步编程</a>
+  </div>
+
+
+<!-- Baidu Button BEGIN -->
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_more" data-cmd="more"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["tsina","weixin","qzone","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","weixin","qzone","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!-- Baidu Button END -->      
+
+
+
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    
+    <a href="/2017/05/24/netty/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+  <!-- 
+  <div class="ds-thread" data-thread-key="2017/09/09/async/" data-title="异步编程杂谈" data-url="http://twogoods.github.io/2017/09/09/async/"></div>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"twogoods"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+ -->
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'twogoods',
+  repo: 'twogoods.github.io',
+  oauth: {
+    client_id: '91f17501ad851ab9adbd',
+    client_secret: '2734ec718d13648964296731e577329d008ad014',
+  },
+})
+gitment.render('container')
+</script>
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Node/">Node</a><small>2</small></li>
+  
+    <li><a href="/categories/docker/">docker</a><small>1</small></li>
+  
+    <li><a href="/categories/git/">git</a><small>2</small></li>
+  
+    <li><a href="/categories/go/">go</a><small>1</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>15</small></li>
+  
+    <li><a href="/categories/javascript/">javascript</a><small>2</small></li>
+  
+    <li><a href="/categories/mysql/">mysql</a><small>1</small></li>
+  
+    <li><a href="/categories/nginx/">nginx</a><small>1</small></li>
+  
+    <li><a href="/categories/redis/">redis</a><small>1</small></li>
+  
+    <li><a href="/categories/产品/">产品</a><small>1</small></li>
+  
+    <li><a href="/categories/小玩意/">小玩意</a><small>1</small></li>
+  
+    <li><a href="/categories/生活/">生活</a><small>1</small></li>
+  
+    <li><a href="/categories/记录/">记录</a><small>4</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 20px;">mybatis</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 20px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/小记/" style="font-size: 10px;">小记</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/异步编程/" style="font-size: 10px;">异步编程</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/09/09/async/">异步编程杂谈</a>
+      </li>
+    
+      <li>
+        <a href="/2017/05/24/netty/">netty源码简读</a>
+      </li>
+    
+      <li>
+        <a href="/2017/05/14/CAS/">CAS中的遇到的一些问题</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/27/IO-Model/">简单聊聊异步同步</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/11/mysql/">mysql笔记</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <iframe width="100%" height="700" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=700&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2942070602&verifier=d8b0c9a5&dpc=1"></iframe>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><section>
+&copy;twogoods &nbsp;
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7065f5fa5f89a8ce45195696b1224959";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+

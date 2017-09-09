@@ -233,7 +233,7 @@
         <p>我们先看一段伪代码：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = sql.query("<span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span><span class="string">");//15毫秒</span><br><span class="line">count= sql.query("</span><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span><span class="string">");//10毫秒</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>上面这段代码有两个耗时操作，他们顺序执行，完成需要25毫秒的时间，我们把这样的称为同步阻塞调用。<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">future=executor.submit<span class="function"><span class="params">(()-&gt;sql.query(<span class="string">"select * from table"</span>))</span>;</span><br><span class="line"><span class="title">future2</span>=<span class="title">executor</span>.<span class="title">submit</span><span class="params">(()-&gt;sql.query(<span class="string">"select * from table"</span>))</span>;</span></span><br></pre></td></tr></table></figure>
-<p>我们启用线程池，配合Future，<code>future.get()</code>会阻塞到操作完成，最终两个操作可以从25毫秒缩短到15毫秒，在实习当中不少同事就会把这样的代码叫做异步的，或许这样的说法久了大家就默认了，但这本质上不是异步。</p>
+<p>我们启用线程池，配合Future，<code>future.get()</code>会阻塞到操作完成，最终两个操作可以从25毫秒缩短到15毫秒，在实习当中不少同事就会把这样的代码叫做异步的，其实没错，但这跟操作系统的IO模型会有一些不同。</p>
 <h3 id="IO模型"><a href="#IO模型" class="headerlink" title="IO模型"></a>IO模型</h3><p>讲这个前自然要先说说阻塞与非阻塞，异步与同步。</p>
 <blockquote>
 <p>阻塞与非阻塞关注的是线程的状态，IO操作会不会把当前线程挂起。<br>同步和异步关注的是消息通知机制，调用者需不需要关注这个数据返回。</p>
@@ -343,7 +343,7 @@ gitment.render('container')
   
     <li><a href="/categories/go/">go</a><small>1</small></li>
   
-    <li><a href="/categories/java/">java</a><small>14</small></li>
+    <li><a href="/categories/java/">java</a><small>15</small></li>
   
     <li><a href="/categories/javascript/">javascript</a><small>2</small></li>
   
@@ -369,7 +369,7 @@ gitment.render('container')
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 20px;">mybatis</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 20px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/小记/" style="font-size: 10px;">小记</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 20px;">mybatis</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 20px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/小记/" style="font-size: 10px;">小记</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/异步编程/" style="font-size: 10px;">异步编程</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
   </div>
 </div>
 
@@ -378,6 +378,10 @@ gitment.render('container')
 <div class="widget tag">
   <h3 class="title">最新文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/09/09/async/">异步编程杂谈</a>
+      </li>
     
       <li>
         <a href="/2017/05/24/netty/">netty源码简读</a>
@@ -393,10 +397,6 @@ gitment.render('container')
     
       <li>
         <a href="/2017/04/11/mysql/">mysql笔记</a>
-      </li>
-    
-      <li>
-        <a href="/2017/04/05/reflection/">Java反射的一点总结</a>
       </li>
     
   </ul>
