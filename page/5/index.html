@@ -221,6 +221,64 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-07-02T12:17:42.000Z"><a href="/2015/07/02/git/">2015-07-02</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/02/git/">git的基本操作</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ol>
+<li>设置Git的user name和email：<br><code>$ git config --global user.name &quot;XXX&quot;</code><br><code>$ git config --global user.email &quot;XXX@gmail.com&quot;</code></li>
+<li>键入命令：<code>ssh-keygen -t rsa -C &quot;email@email.com&quot;</code><br><code>email@email.com</code>是git账号；</li>
+<li>提醒你输入key的名称，输入如<code>id_rsa</code>；</li>
+<li>在用户user目录下产生两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code>；</li>
+<li>用打开id_rsa.pub文件，复制内容，在github.com的网站上到ssh密钥管理页面，添加新公钥，随便取个名字，内容粘贴刚才复制的内容；</li>
+</ol>
+<p>基本操作：<br>创建     <code>git init</code><br>添加到版本库      <code>git add readme.txt</code><br>提交到本地    <code>git commit -m &quot;fiorst commit&quot;</code><br>版本回退      <code>git reset --hard commit_id（head、head^、head~100）</code><br>查看状态     <code>git status</code><br>克隆        <code>git clone XXXXX</code><br>撤销文件的修改     <code>git checkout -- readme.txt</code><br>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/07/02/git/#more" class="more-link">阅读全文</a>
+          </div>
+        
+        
+      
+
+
+
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-06-28T14:03:13.000Z"><a href="/2015/06/28/redis/">2015-06-28</a></time>
       
       
@@ -461,63 +519,6 @@
 
 
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-02-10T02:46:18.000Z"><a href="/2015/02/10/2-10-JavaScript/">2015-02-10</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/02/10/2-10-JavaScript/">javascript基础点</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>以下是自己学习JavaScript中遇到的问题，网上的这些博文给出了很好的解答，在此一并小计一下。<br>PS:《javascript高级程序设计》值得一读。</p>
-<ol>
-<li>立即执行函数(function(){…})() 与 (function(){…}()) 的区别？  <a href="http://segmentfault.com/q/1010000000442042" target="_blank" rel="external">解答</a></li>
-<li><a href="http://segmentfault.com/blog/nightire/1190000000348228" target="_blank" rel="external">作用域的问题</a>  ，js里只有函数作用域：<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">color</span>=<span class="string">"red"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">color</span>)</span>&#123;</span><br><span class="line"><span class="comment">/*</span><br><span class="line">在函数作用域内有一个color的局部变量。</span><br><span class="line">若不是这样，alert(color)使浏览器报color is not defined的错误</span><br><span class="line">*/</span></span><br><span class="line">	alert(<span class="built_in">color</span>);</span><br><span class="line">	<span class="built_in">color</span>=<span class="string">"blue"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这里是引用外部的全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">change2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">color</span>=<span class="string">"blue"</span>;</span><br><span class="line">&#125;</span><br><span class="line">change();<span class="comment">// undefined</span></span><br><span class="line">change(<span class="built_in">color</span>);<span class="comment">// red</span></span><br><span class="line">change2();</span><br><span class="line">alert(<span class="built_in">color</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>在执行change()时声明了局部变量color但未初始化所以是undefined；执行change(color)时声明并初始化了局部变量所以是red,紧接着<code>color=&quot;blue&quot;</code>修改了局部变量的值.</p>
-<ol>
-<li><a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html" target="_blank" rel="external">关于闭包</a>，说的通俗些闭包就是能够读取其他函数内部变量的函数。这里有进一步的<a href="https://cnodejs.org/topic/5482d05e73dcca8d21292928" target="_blank" rel="external">说明</a></li>
-</ol>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-
-
-
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -556,7 +557,7 @@
   
     <li><a href="/categories/小玩意/">小玩意</a><small>1</small></li>
   
-    <li><a href="/categories/生活/">生活</a><small>1</small></li>
+    <li><a href="/categories/生活/">生活</a><small>2</small></li>
   
     <li><a href="/categories/记录/">记录</a><small>4</small></li>
   
@@ -568,7 +569,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 20px;">mybatis</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 20px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/小记/" style="font-size: 10px;">小记</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/异步编程/" style="font-size: 10px;">异步编程</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 20px;">mybatis</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 20px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/小记/" style="font-size: 10px;">小记</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/异步编程/" style="font-size: 10px;">异步编程</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
   </div>
 </div>
 
@@ -577,6 +578,10 @@
 <div class="widget tag">
   <h3 class="title">最新文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2018/01/18/2017/">我的2017</a>
+      </li>
     
       <li>
         <a href="/2017/09/09/async/">异步编程杂谈</a>
@@ -592,10 +597,6 @@
     
       <li>
         <a href="/2017/04/27/IO-Model/">简单聊聊异步同步</a>
-      </li>
-    
-      <li>
-        <a href="/2017/04/11/mysql/">mysql笔记</a>
       </li>
     
   </ul>
