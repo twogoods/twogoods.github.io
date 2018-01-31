@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hexo | Twogoods</title>
+  <title>异步编程杂谈(续) | Twogoods</title>
   <meta name="author" content="twogoods">
   
   <meta name="description" content="twogoods&#39; blog">
@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="异步编程杂谈(续)"/>
   <meta property="og:site_name" content="Twogoods"/>
 
   
@@ -202,25 +202,132 @@
   <a href="https://github.com/twogoods"><img style="position: absolute; z-index:80; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
   
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">hexo</h2>
-
-
-  <div class="archive">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2014-12-28T05:20:29.000Z"><a href="/2014/12/28/2014-12-28/">2014-12-28</a></time>
-            
-              <h1 class="title"><a href="/2014/12/28/2014-12-28/">第一次尝试</a></h1>
-            
-          </header>
-        </div>
-      </article>
+      <img src="">
     
   </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-01-09T05:30:56.000Z"><a href="/2018/01/09/async-two/">2018-01-09</a></time>
+      
+      
+  
+    <h1 class="title">异步编程杂谈(续)</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在简单看了<code>netty</code>的代码后就入坑了异步非阻塞这一块的内容，前面也陆陆续续写了好几篇，最近的一篇居然是9月份的<a href="http://twogoods.github.io/2017/09/09/async/">异步编程杂谈</a>，后面由于各种原因加上自己懒就没有下文了….哪怕写了前几篇也总有点似懂非懂的感觉，新年到了，要重开这个坑，彻底搞清楚。<a id="more"></a></p>
+<h2 id="异步的好处"><a href="#异步的好处" class="headerlink" title="异步的好处"></a>异步的好处</h2><p>玩异步最重要的是要搞清楚它的好处是什么，然后才是代码分格的不一样，callback问题的解决。类似 nodejs,假设如果业务上可并行的代码比较少(个人感觉大量的业务代码就是并行度不高的)，全都是下一步操作要等上一步的结果，代码里有不少 async/await，那可以说异步编程也未必能降低响应时间的(当然，并发量特别大的时候比起同步方式还是能带来响应时间的优势)。那异步编程带来了什么好处？</p>
+<p><strong>吞吐量</strong>，单机200个线程，同步模式就只能处理200个请求，一个线程处理整个的业务，遇到io操作就阻塞等待，cpu没有得到充分利用；再看异步模式，一个请求过来，如果100msCPU，100msIO,那总得响应时间还是200ms,没有降低，但是100msIO操作的时候线程得以释放去做另一个请求的100msCpu操作，CPU被充分利用了，单位时间处理请求数也增加了，吞吐量也增加了。</p>
+<blockquote>
+<p>对于同步处理程序，同一线程会用于该请求的整个生命周期；相反，对于异步处理程序，可以将不同的线程分配给同一请求（在不同的时间）。</p>
+</blockquote>
+<p>异步下，IO操作线程释放去做别的任务，IO操作不占一个线程？答案如下：没有！</p>
+<blockquote>
+<p>异步代码释放请求线程，但这只能以牺牲系统中另一个线程为代价吧？没有，一点关系也没有。</p>
+</blockquote>
+<p>要解释这个问题又要回到linux的io模型上,我们说io多路复用技术里多个连接会注册到一个select或者epoll，最终只阻塞到一个线程上。vertx在网络IO中使用的是NIO，那本地文件呢？同样的FileSystem里Vertx使用JDK7带来的<code>AsynchronousFileChannel</code>是绝对的异步模式。</p>
+<p><a href="https://msdn.microsoft.com/zh-cn/magazine/dn802603.aspx" target="_blank" rel="external">https://msdn.microsoft.com/zh-cn/magazine/dn802603.aspx</a><br><a href="https://www.ibm.com/developerworks/cn/linux/l-async/" target="_blank" rel="external">https://www.ibm.com/developerworks/cn/linux/l-async/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/java/">java</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/异步编程/">异步编程</a>
+  </div>
+
+
+<!-- Baidu Button BEGIN -->
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_more" data-cmd="more"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["tsina","weixin","qzone","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","weixin","qzone","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!-- Baidu Button END -->      
+
+
+
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2018/01/29/async-callback/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2017/09/09/async/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+  <!-- 
+  <div class="ds-thread" data-thread-key="2018/01/09/async-two/" data-title="异步编程杂谈(续)" data-url="http://twogoods.github.io/2018/01/09/async-two/"></div>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"twogoods"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+ -->
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'twogoods',
+  repo: 'twogoods.github.io',
+  oauth: {
+    client_id: '91f17501ad851ab9adbd',
+    client_secret: '2734ec718d13648964296731e577329d008ad014',
+  },
+})
+gitment.render('container')
+</script>
+  
+</section>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   

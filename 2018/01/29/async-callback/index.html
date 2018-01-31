@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>再看callback hell | Twogoods</title>
+  <meta name="author" content="twogoods">
+  
+  <meta name="description" content="twogoods&#39; blog">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="再看callback hell"/>
+  <meta property="og:site_name" content="Twogoods"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="Twogoods" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="http://apps.bdimg.com/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">Twogoods</a></h1>
+  <h2><a href="/">每一步都是一个脚印</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+<li> <a title="累了？请猛戳" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+
+  <a href="https://github.com/twogoods"><img style="position: absolute; z-index:80; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+  
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-01-29T05:47:06.000Z"><a href="/2018/01/29/async-callback/">2018-01-29</a></time>
+      
+      
+  
+    <h1 class="title">再看callback hell</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>以一个在实际中是非常常见为例，分页查询的rest接口，正常的同步逻辑是这样的：<a id="more"></a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//示例1</span><br><span class="line">SQLConnection connection=client.getConnection();</span><br><span class="line">list = connection.query("<span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> lmit <span class="number">0</span>,<span class="number">20</span><span class="string">");</span><br><span class="line">count= connection.query("</span><span class="keyword">select</span> <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> <span class="keyword">user</span><span class="string">");</span><br><span class="line">//组装json</span></span><br></pre></td></tr></table></figure>
+<p>查总数和查列表数据没有依赖关系，改造一下</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span>示例<span class="number">2</span></span><br><span class="line">Executor executor = Executors.newFixedThreadPool(<span class="number">10</span>);</span><br><span class="line">SQLConnection connection=client.getConnection();</span><br><span class="line">listFuture=executor.submit(<span class="function"><span class="params">()</span>-&gt;</span>connection.query(<span class="string">"select * from user lmit 0,20"</span>));</span><br><span class="line">countFuture=executor.submit(<span class="function"><span class="params">()</span>-&gt;</span>connection.query(<span class="string">"select count(1) from user"</span>));</span><br><span class="line"><span class="regexp">//</span>通过 listFuture.get() countFuture.get()  组装json</span><br></pre></td></tr></table></figure>
+<p>这里executor.submit会立即返回，但你不知道这个任务到底要执行多久，而future.get()依然有阻塞当前执行线程的可能，并不是一种特别好的方式。再看看异步代码会怎么写，以下代码都以Vertx为例</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//示例3</span></span><br><span class="line"><span class="selector-tag">lient</span><span class="selector-class">.getConnection</span>(res -&gt; &#123;</span><br><span class="line">       SQLConnection connection = res<span class="selector-class">.result</span>();</span><br><span class="line">       <span class="selector-tag">connection</span><span class="selector-class">.query</span>(<span class="string">"select * from user lmit 0,20"</span>, res2 -&gt; &#123;</span><br><span class="line">           <span class="selector-tag">connection</span><span class="selector-class">.query</span>(<span class="string">"select count(1) from user"</span>, res3 -&gt; &#123;</span><br><span class="line">               <span class="comment">//组装json</span></span><br><span class="line">           &#125;);</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
+<p>可以看到示例3是示例1的异步化写法，导致了callback hell,而且这里又不同于示例2。ok,这里怎么改造一下能解决callback和并行化的问题？主要有三种方法，future、coroutine、rx</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;SQLConnection&gt; connectionFuture = Future.future(future-&gt;client.getConnection(future))<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">Future&lt;ResultSet&gt; countFuture = Future.future()<span class="comment">;</span></span><br><span class="line">Future&lt;ResultSet&gt; rowFuture = Future.future()<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">Future&lt;ResultSet&gt; tmp = Future.future()<span class="comment">;</span></span><br><span class="line">connectionFuture.setHandler(res -&gt; &#123;</span><br><span class="line">  SQLConnection connection = res.result()<span class="comment">;</span></span><br><span class="line">  connection.query("SELECT count(<span class="number">1</span>) FROM T_User", countFuture.completer())<span class="comment">;</span></span><br><span class="line">  connection.query("SELECT * FROM T_User", rowFuture.completer())<span class="comment">;</span></span><br><span class="line">&#125;)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">countFuture.setHandler(res -&gt; &#123;</span><br><span class="line">  tmp.complete(res.result())<span class="comment">;</span></span><br><span class="line">&#125;)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">rowFuture.setHandler(res -&gt; &#123;</span><br><span class="line">  tmp.setHandler(countSet -&gt; &#123;</span><br><span class="line">      ResultSet count = countSet.result()<span class="comment">;</span></span><br><span class="line">      ResultSet raw = res.result()<span class="comment">;</span></span><br><span class="line">      //组装json</span><br><span class="line">  &#125;)<span class="comment">;</span></span><br><span class="line">&#125;)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>上面这种呢造了一个中间future,很难受</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">F<span class="function"><span class="title">uture</span>&lt;SQLConnection&gt; connectionFuture = Future.future(future-&gt;</span>client.getConnection(future));</span><br><span class="line"></span><br><span class="line">Future&lt;ResultSet&gt; countFuture = Future.future();</span><br><span class="line">Future&lt;ResultSet&gt; rowFuture = Future.future();</span><br><span class="line"><span class="function"><span class="title">connectionFuture</span>.setHandler(res -&gt;</span> &#123;</span><br><span class="line">  SQLConnection connection = res.result();</span><br><span class="line">  connection.query(<span class="string">"SELECT count(1) FROM T_User"</span>, countFuture.completer());</span><br><span class="line">  connection.query(<span class="string">"SELECT * FROM T_User"</span>, rowFuture.completer());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">C<span class="function"><span class="title">ompositeFuture</span>.all(countFuture, rowFuture).setHandler(ar -&gt;</span> &#123;</span><br><span class="line"><span class="comment">//只有当all里的future都完成了才会调用handle</span></span><br><span class="line">  <span class="keyword">if</span> (ar.succeeded()) &#123;</span><br><span class="line">      ResultSet count = countSet.result();</span><br><span class="line">      ResultSet raw = res.result();</span><br><span class="line">      <span class="comment">//组装json</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>另外再看看rx系列怎么解决这个问题</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">O<span class="function"><span class="title">bservable</span>&lt;String&gt; observable = Observable.create(observableEmitter -&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//改造代码成rx风格，使用create，在这个地方写原来的代码</span></span><br><span class="line">  <span class="function"><span class="title">client</span>.getConnection(res -&gt;</span> &#123;</span><br><span class="line">      SQLConnection connection = res.result();</span><br><span class="line">      <span class="function"><span class="title">connection</span>.query("SELECT count(1) FROM T_User", res2 -&gt;</span> &#123;</span><br><span class="line">          <span class="function"><span class="title">connection</span>.query("SSELECT * FROM T_User", res3 -&gt;</span> &#123;</span><br><span class="line">              observableEmitter.onNext(res2.result().getRows().toString());</span><br><span class="line">              observableEmitter.onComplete();</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">observable</span>.subscribe(s -&gt;</span> System.out::println);</span><br></pre></td></tr></table></figure>
+<p>当然上面只是硬搬过来而已利用了RX的api，感觉并没有解决callback的问题</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">O<span class="function"><span class="title">bservable</span>&lt;SQLConnection&gt; conObservable = Observable.create(emitter -&gt;</span> &#123;</span><br><span class="line">            <span class="function"><span class="title">client</span>.getConnection(res -&gt;</span> &#123;</span><br><span class="line">                emitter.onNext(res.result());</span><br><span class="line">                emitter.onComplete();</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">O<span class="function"><span class="title">bservable</span>&lt;String&gt; data1 = conObservable.concatMap(connection -&gt;</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">return</span> Observable.create(observableEmitter -&gt;</span> &#123;</span><br><span class="line">      <span class="function"><span class="title">connection</span>.query("SELECT count(1) FROM T_User", res2 -&gt;</span> &#123;</span><br><span class="line">          observableEmitter.onNext(res2.result().getRows().toString());</span><br><span class="line">          observableEmitter.onComplete();</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">O<span class="function"><span class="title">bservable</span>&lt;String&gt; data2 = conObservable.concatMap(connection -&gt;</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">return</span> Observable.create(observableEmitter -&gt;</span> &#123;</span><br><span class="line">      <span class="function"><span class="title">connection</span>.query("SELECT * FROM T_User", res2 -&gt;</span> &#123;</span><br><span class="line">          observableEmitter.onNext(res2.result().getRows().toString());</span><br><span class="line">          observableEmitter.onComplete();</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"> O<span class="function"><span class="title">bservable</span>.zip(data1, data2, (d1, d2) -&gt;</span> d1 + d2).subscribe(System.out::println);</span><br></pre></td></tr></table></figure>
+<p>上面这种操作数据库的方式已经很底层了，RX包装后两个查询操作并不会共用一个connection，如何做呢？RX系列感觉很困难，我还没找到好的方法，但是在我们的项目代码里一条SQL往往要封装成一个函数，那么自然每条SQL会用不同的connection，其实这个点不需要纠结，而且当初纠结了好一会儿……</p>
+<p>回调在不阻塞任何事情的情况下，解决了Future.get()过早阻塞的问题。RX系列利用观察者模式实现，观察者模式订阅，被观察者如何通知观察者呢？调用观察者注册的handle，某种程度来说这也是回调。</p>
+<p>以上是rxjava的代码，spring5webflux里使用了另一个<a href="http://projectreactor.io/docs/core/release/reference" target="_blank" rel="external">RX库</a>，使用都差不多。</p>
+<p>关于RX系列只能先写到这里，感觉还没有完全get到精髓。据说在很fp的语言上写这个会非常方便，大神给出的从oop到fp之路:java -&gt; kotlin -&gt; scala -&gt; clojure -&gt; haskell</p>
+<h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>看到这里你也发现了，原来三四行的代码，一改异步，再解决callback，居然多了这么多行，此刻内心我是拒绝的…..<br>那么更好的方案就是：coroutine，协程在异步IO编程模式里能大大简化异步回调的实现与逻辑处理。</p>
+<p><strong>协程</strong>是用户态的线程，非常轻量级，占用内存甚至只需几百byte，系统可以创建上百万的协程，并且在任务切换时对CPU负担非常小；线程的另一个特点是可以在任一地方挂起，自己会保存栈信息，下次执行时恢复，协程上有个经常出现的一个词yield，说的就是挂起这点。</p>
+<p>在这里你可能也和我一样有一个疑问，那为什么现在的语言不以协程为执行单位(这么说好像违反了我们对操作系统进程线程的理解)，由于它是用户态的线程，所以遇到系统调用我们在想办法搞别的，这样的话你背后完全可以搞成异步模式而对于程序员来说几乎无感知。谁知道可以告诉我。</p>
+<blockquote>
+<p>协程的本质上其实还是和上面的方法一样，只不过他的核心点在于调度那块由他来负责解决，遇到阻塞操作，立刻yield掉，并且记录当前栈上的数据，阻塞完后立刻再找一个线程恢复栈并把阻塞的结果放到这个线程上去跑，这样看上去好像跟写同步代码没有任何差别，这整个流程可以称为coroutine，而跑在由coroutine负责调度的线程称为Fiber。比如Golang里的 go关键字其实就是负责开启一个Fiber，让func逻辑跑在上面。而这一切都是发生的用户态上，没有发生在内核态上，也就是说没有ContextSwitch上的开销。</p>
+</blockquote>
+<p>我的个人理解：协程那样搞了之后io操作block的是协程，协程本身yield和恢复的开销非常小，远小于线程上下文切换的开销，协程可以很廉价的被创造出来，但是他本质上还是跑在一个线程上面，一个协程被block线程会转而执行(调度)其他协程。</p>
+<p>ok，接下来看一下代码，首先是Java语言，JVM本身没有提供协程的支持，好在有第三方工具的支持<a href="https://github.com/puniverse/quasar" target="_blank" rel="external">quasar</a>，至于quasar怎么使用大家看<a href="http://docs.paralleluniverse.co/quasar/" target="_blank" rel="external">文档</a>或者刘大神的<a href="http://www.streamis.me/2016/05/04/java-next-generation-1/" target="_blank" rel="external">博客</a>，vertx自己也封装了一下quasar，引入Vertx-sync即可。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SQLConnection connection = awaitResult(<span class="name">h</span> -&gt; client.getConnection(<span class="name">h</span>))<span class="comment">;</span></span><br><span class="line">ResultSet countRes = awaitResult(<span class="name">h</span> -&gt; connection.query(<span class="string">"SELECT count(1) FROM T_User"</span>, h))<span class="comment">;</span></span><br><span class="line">ResultSet listRes = awaitResult(<span class="name">h</span> -&gt; connection.query(<span class="string">"SELECT * FROM T_User"</span>, h))<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>可以看到它跟示例1一样只有三行代码，就是同步模式下的编程习惯。JVM上有协程的一门语言是<a href="https://www.kotlincn.net/docs/reference/" target="_blank" rel="external">Kotlin</a>，经过vertx封装后代码几乎跟上面的一样，但是我第一次看Kotlin语法的时候还是各种不适应，带有fp味道的就是有点抽象……</p>
+<p><a href="https://www.npmjs.com/package/async" target="_blank" rel="external">https://www.npmjs.com/package/async</a><br><a href="https://zhuanlan.zhihu.com/p/28046403" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/28046403</a><br><a href="https://juejin.im/post/5a3b44bbf265da43062aee37#heading-3" target="_blank" rel="external">https://juejin.im/post/5a3b44bbf265da43062aee37#heading-3</a><br><a href="http://www.streamis.me/2016/05/04/java-next-generation-1/" target="_blank" rel="external">http://www.streamis.me/2016/05/04/java-next-generation-1/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/java/">java</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/异步编程/">异步编程</a>
+  </div>
+
+
+<!-- Baidu Button BEGIN -->
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_more" data-cmd="more"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["tsina","weixin","qzone","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","weixin","qzone","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!-- Baidu Button END -->      
+
+
+
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    
+    <a href="/2018/01/09/async-two/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+  <!-- 
+  <div class="ds-thread" data-thread-key="2018/01/29/async-callback/" data-title="再看callback hell" data-url="http://twogoods.github.io/2018/01/29/async-callback/"></div>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"twogoods"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+ -->
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'twogoods',
+  repo: 'twogoods.github.io',
+  oauth: {
+    client_id: '91f17501ad851ab9adbd',
+    client_secret: '2734ec718d13648964296731e577329d008ad014',
+  },
+})
+gitment.render('container')
+</script>
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Node/">Node</a><small>2</small></li>
+  
+    <li><a href="/categories/docker/">docker</a><small>1</small></li>
+  
+    <li><a href="/categories/git/">git</a><small>2</small></li>
+  
+    <li><a href="/categories/go/">go</a><small>1</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>17</small></li>
+  
+    <li><a href="/categories/javascript/">javascript</a><small>2</small></li>
+  
+    <li><a href="/categories/mysql/">mysql</a><small>1</small></li>
+  
+    <li><a href="/categories/nginx/">nginx</a><small>1</small></li>
+  
+    <li><a href="/categories/redis/">redis</a><small>1</small></li>
+  
+    <li><a href="/categories/产品/">产品</a><small>1</small></li>
+  
+    <li><a href="/categories/小玩意/">小玩意</a><small>1</small></li>
+  
+    <li><a href="/categories/生活/">生活</a><small>1</small></li>
+  
+    <li><a href="/categories/记录/">记录</a><small>4</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/config-server/" style="font-size: 10px;">config-server</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis安装/" style="font-size: 10px;">redis安装</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/tiny4j/" style="font-size: 15px;">tiny4j</a> <a href="/tags/toys/" style="font-size: 10px;">toys</a> <a href="/tags/产品经理/" style="font-size: 10px;">产品经理</a> <a href="/tags/动态代理/" style="font-size: 10px;">动态代理</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小计/" style="font-size: 10px;">小计</a> <a href="/tags/小记/" style="font-size: 10px;">小记</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/异步编程/" style="font-size: 20px;">异步编程</a> <a href="/tags/感想/" style="font-size: 10px;">感想</a> <a href="/tags/感谢/" style="font-size: 10px;">感谢</a> <a href="/tags/私密空间/" style="font-size: 10px;">私密空间</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/问题小计/" style="font-size: 10px;">问题小计</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/01/29/async-callback/">再看callback hell</a>
+      </li>
+    
+      <li>
+        <a href="/2018/01/09/async-two/">异步编程杂谈(续)</a>
+      </li>
+    
+      <li>
+        <a href="/2017/09/09/async/">异步编程杂谈</a>
+      </li>
+    
+      <li>
+        <a href="/2017/05/24/netty/">netty源码简读</a>
+      </li>
+    
+      <li>
+        <a href="/2017/05/14/CAS/">CAS中的遇到的一些问题</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <iframe width="100%" height="700" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=700&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2942070602&verifier=d8b0c9a5&dpc=1"></iframe>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><section>
+&copy;twogoods &nbsp;
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7065f5fa5f89a8ce45195696b1224959";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
